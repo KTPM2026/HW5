@@ -57,4 +57,4 @@ By signing below, I confirm that this reflective statement is honest and accurat
 | Course: | CS423 / CSC13003 – Software Testing |
 | Instructor: | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
 | Date: | 22/11/2026 |
-| Signature: |  |
+| Signature: | Phát |

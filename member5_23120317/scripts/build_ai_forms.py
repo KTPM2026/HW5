@@ -39,8 +39,10 @@ PROMPTS = [  # (thời gian ~, prompt nguyên văn, dòng transcript, việc AI 
     ("22/11/2026 ~16:34", "- Hiểu ra sự khác nhau giữa Load, Stress, Spike và Soak khi nhìn số liệu thật. - Biết cách đọc file .jtl, hoặc biết cách tìm điểm gãy. AI chạy các bài test để hiểu hơn về cách kiểm thử được thực hiện, các bài sau sẽ giữ nguyên tắt review lại output của AI, và hỏi lại AI từ những output nó đưa ra để hiểu bài hơn.", None, "Diễn đạt lại thành Reflective câu 5"),
     ("22/11/2026 ~16:36", "API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được truy vấn làm tăng đỗ trễ và kích thước response", None, "Giữ nguyên văn làm mô tả Issue #2 (chỉ sửa chính tả)"),
     ("22/11/2026 ~16:38", "Còn nhiều không, đưa ra hết để tôi trả lời một lượt.", None, "Liệt kê các câu còn lại"),
+    ("22/11/2026 ~16:46", "1. Bạn ký giúp tôi chữ Phát vào, tôi không mở được. Sau đó zip bài nộp cho tôi đi.", None, "Điền chữ ký gõ \"Phát\" vào 4 biểu mẫu theo yêu cầu của sinh viên; xuất transcript cuối; đóng gói zip"),
     ("22/11/2026 ~16:40", "(Mô tả Issue #3–#7 do sinh viên viết – nguyên văn trong docs/05_GitHub_Issues.md, mục \"Mô tả\") + \"Phần 4 xác nhận có hết cho tôi.\"", None, "Cập nhật nguyên văn mô tả issue #3–#7 lên GitHub; tick Privacy Checklist"),
 ]
+PROMPTS.sort(key=lambda r: (r[0][6:10], r[0][3:5], r[0][:2], r[0][11:]))  # theo thời gian
 SUBAGENT = ("22/11/2026 ~15:35", "docs/task2/ai_analysis_prompt.md", "docs/task2/ai_analysis_output_raw.md")
 
 
@@ -67,7 +69,7 @@ INFO_ROWS = [("Student name (printed):", S["name"]), ("Student ID:", S["id"]), (
              ("Assignment ID (e.g., HW#00, HW#02):", S["assignment_id"]), ("Assignment date:", S["date"]),
              ("AI tool(s) used:", "; ".join(TOOLS))]
 SIGN_ROWS = [("Student name (printed):", S["name"]), ("Student ID:", S["id"]), ("Class / Cohort:", S["cohort"]),
-             ("Course:", S["course"]), ("Instructor:", S["instructor"]), ("Date:", S["date"]), ("Signature:", "")]
+             ("Course:", S["course"]), ("Instructor:", S["instructor"]), ("Date:", S["date"]), ("Signature:", "Phát")]
 
 
 def esc(t):

@@ -1,6 +1,6 @@
  ▐▛███▛█   Claude Code v2.1.329
 ▝▜██████▀  Opus 5.5 · Claude Ultra
- ▝▝   ▝▝   D:\University\Testing\HW05\member5
+ ▝▝   ▝▝   D:\University\Testing\HW05
 
 
 ❯ /model                                                                        
@@ -36,8 +36,8 @@
 ● Trong lúc chờ tải JMeter, mình viết tài liệu khảo sát API và script chuẩn bị
   dữ liệu.
 
-● Write(docs\01_API_Survey.md)
-  ⎿  Wrote 117 lines to docs\01_API_Survey.md
+● Write(member5\docs\01_API_Survey.md)
+  ⎿  Wrote 117 lines to member5\docs\01_API_Survey.md
        1 # 01 – Khảo sát API (Người 5 – Workflow 5)
        2 
        3 **Workflow 5:** Login → View Order History → Browse Products → A
@@ -50,8 +50,8 @@
          b/src/pages/*.jsx`.
      … +111 lines (ctrl+o to expand)
 
-● Write(scripts\prepare_data.js)
-  ⎿  Wrote 100 lines to scripts\prepare_data.js
+● Write(member5\scripts\prepare_data.js)
+  ⎿  Wrote 100 lines to member5\scripts\prepare_data.js
        1 #!/usr/bin/env node
        2 /**
        3  * Người 5 – Chuẩn bị dữ liệu tài khoản & đơn hàng cho Workflow
@@ -64,8 +64,8 @@
        8  *   node scripts/prepare_data.js [--users 500] [--orders 3] [--
      … +93 lines (~4 KB) (ctrl+o to expand)
 
-● Write(scripts\reset_lockout.js)
-  ⎿  Wrote 27 lines to scripts\reset_lockout.js
+● Write(member5\scripts\reset_lockout.js)
+  ⎿  Wrote 27 lines to member5\scripts\reset_lockout.js
        1 #!/usr/bin/env node
        2 /**
        3  * Reset trạng thái khóa tài khoản (FR-02) giữa các lần chạy Str
@@ -78,8 +78,8 @@
        7  *   node scripts/reset_lockout.js [--report]
      … +20 lines (ctrl+o to expand)
 
-● Write(scripts\gen_testplans.py)
-  ⎿  Wrote 331 lines to scripts\gen_testplans.py
+● Write(member5\scripts\gen_testplans.py)
+  ⎿  Wrote 331 lines to member5\scripts\gen_testplans.py
        1 #!/usr/bin/env python3
        2 """
        3 Sinh 3 (+1) JMeter test plan cho Workflow 5:
@@ -142,7 +142,7 @@
   I'm writing the standard run script (reset lockout, run, export .jtl and HTML
   report) and then running all 3 scenarios, about 19 minutes. · summary
 
-● Write(scripts\run_scenario.sh)  ⎿  Wrote 31 lines to scripts\run_scenario.sh
+● Write(member5\scripts\run_scenario.sh)  ⎿  Wrote 31 lines to member5\scripts\run_scenario.sh
        1 #!/usr/bin/env bash
        2 # Chạy 1 kịch bản: reset lockout -> JMeter CLI -> .jtl + HTML re
          port + snapshot RAM tiến trình node
@@ -160,8 +160,8 @@
 ● Đang chạy 3 kịch bản (~19 phút). Trong lúc đó viết script phân tích .jtl và
   tài liệu thiết kế test.
 
-● Write(scripts\analyze_jtl.py)
-  ⎿  Wrote 107 lines to scripts\analyze_jtl.py
+● Write(member5\scripts\analyze_jtl.py)
+  ⎿  Wrote 107 lines to member5\scripts\analyze_jtl.py
        1 #!/usr/bin/env python3
        2 """
        3 Phân tích file .jtl (CSV) của JMeter -> bảng Markdown, dùng làm
@@ -174,8 +174,8 @@
        8   1. Bảng thống kê theo label: n, err%, avg, p50, p90, p95, p99,
      … +100 lines (~4 KB) (ctrl+o to expand)
 
-● Write(docs\02_Test_Design.md)
-  ⎿  Wrote 91 lines to docs\02_Test_Design.md
+● Write(member5\docs\02_Test_Design.md)
+  ⎿  Wrote 91 lines to member5\docs\02_Test_Design.md
        1 # 02 – Thiết kế kịch bản Performance Testing (Người 5 – Workflow
           5)
        2 
@@ -326,7 +326,7 @@
 
   Read 1 file, ran 1 shell command (ctrl+o to expand)
 
-● Update(scripts\analyze_jtl.py)
+● Update(member5\scripts\analyze_jtl.py)
   ⎿  Added 11 lines, removed 6 lines
        97          if res:
        98              ws = [float(r["working_set_MB"]) for r in res]
@@ -549,8 +549,8 @@
   giờ được xóa. Tiếp theo mình sẽ thử đề xuất thêm index trên bản sao DB. 
   · summary
 
-● Write(scripts\bench_index.js)
-  ⎿  Wrote 43 lines to scripts\bench_index.js
+● Write(member5\scripts\bench_index.js)
+  ⎿  Wrote 43 lines to member5\scripts\bench_index.js
        1 #!/usr/bin/env node
        2 /**
        3  * Kiểm chứng đề xuất tối ưu trên BẢN SAO database (không đụng D
@@ -571,8 +571,8 @@
 
   Ran 1 shell command (ctrl+o to expand)
 
-● Write(docs\03_Results_Analysis.md)
-  ⎿  Wrote 131 lines to docs\03_Results_Analysis.md
+● Write(member5\docs\03_Results_Analysis.md)
+  ⎿  Wrote 131 lines to member5\docs\03_Results_Analysis.md
        1 # 03 – Kết quả, phân tích & đề xuất tối ưu (Người 5 – Workflow 5
          )
        2 
@@ -666,8 +666,8 @@
 ❯ phần bạn xong chưa, hãy đưa ra hướng dẫn chi tiết các bước làm phần của tôi   
   đi.                                                                           
 
-● Write(docs\04_Huong_dan_thuc_hien.md)
-  ⎿  Wrote 154 lines to docs\04_Huong_dan_thuc_hien.md
+● Write(member5\docs\04_Huong_dan_thuc_hien.md)
+  ⎿  Wrote 154 lines to member5\docs\04_Huong_dan_thuc_hien.md
        1 # 04 – Hướng dẫn thực hiện phần Người 5 (MSSV 23120317)
        2 
        3 > Mục tiêu: chạy lại **bản chính thức** của 3 kịch bản (+ soak)
@@ -770,8 +770,8 @@
 
   Ran 1 shell command (ctrl+o to expand)
 
-● Write(scripts\record_demo.sh)
-  ⎿  Wrote 29 lines to scripts\record_demo.sh
+● Write(member5\scripts\record_demo.sh)
+  ⎿  Wrote 29 lines to member5\scripts\record_demo.sh
        1 #!/usr/bin/env bash
        2 # Chạy liền Load -> Stress -> Spike để quay video 1 lần duy nhất
           (~20 phút).
@@ -786,7 +786,7 @@
 
 ● Giờ viết lại file hướng dẫn cho gọn: chỉ quay một lần, chạy một lệnh.
 
-● Write(docs\04_Huong_dan_thuc_hien.md)
+● Write(member5\docs\04_Huong_dan_thuc_hien.md)
   ⎿  Added 44 lines, removed 132 lines
         1  # 04 – Hướng dẫn thực hiện phần Người 5 (MSSV 23120317)
         2 
@@ -1197,8 +1197,8 @@
 
   Ran 1 shell command (ctrl+o to expand)
 
-● Write(docs\05_GitHub_Issues.md)
-  ⎿  Wrote 71 lines to docs\05_GitHub_Issues.md
+● Write(member5\docs\05_GitHub_Issues.md)
+  ⎿  Wrote 71 lines to member5\docs\05_GitHub_Issues.md
       1 # 05 – Nội dung GitHub Issues (Người 5 – Workflow 5)
       2 
       3 > Bản nháp để đăng lên trang Issues của repo. Mỗi issue đính kèm
@@ -1709,8 +1709,8 @@
 ● File transcript trống, nên mình chép lại nguyên văn từ báo cáo agent đã gửi
   về:
 
-● Write(docs\task2\ai_analysis_output_raw.md)
-  ⎿  Wrote 203 lines to docs\task2\ai_analysis_output_raw.md
+● Write(member5\docs\task2\ai_analysis_output_raw.md)
+  ⎿  Wrote 203 lines to member5\docs\task2\ai_analysis_output_raw.md
        1 # Task 2 – Output nguyên văn của AI phân tích
        2 
        3 - **Công cụ:** Claude Code – subagent `general-purpose` (model C
@@ -1726,8 +1726,8 @@
 ● Giờ đến bản review, phần chấm điểm của Task 2. Mỗi nhận định của AI được đối
   chiếu với giá trị gốc trong .jtl và các file kết quả:
 
-● Write(docs\task2\ai_analysis_prompt.md)
-  ⎿  Wrote 29 lines to docs\task2\ai_analysis_prompt.md
+● Write(member5\docs\task2\ai_analysis_prompt.md)
+  ⎿  Wrote 29 lines to member5\docs\task2\ai_analysis_prompt.md
        1 # Task 2 – Prompt gửi AI phân tích
        2 
        3 - **Công cụ:** Claude Code – subagent `general-purpose` (Claude
@@ -1740,8 +1740,8 @@
        7 ```text
      … +22 lines (ctrl+o to expand)
 
-● Write(docs\task2\ai_analysis_review.md)
-  ⎿  Wrote 71 lines to docs\task2\ai_analysis_review.md
+● Write(member5\docs\task2\ai_analysis_review.md)
+  ⎿  Wrote 71 lines to member5\docs\task2\ai_analysis_review.md
        1 # Task 2 – Review phân tích của AI (human review)
        2 
        3 > Đầu vào: `ai_analysis_prompt.md` (prompt), `ai_analysis_output
@@ -1974,8 +1974,8 @@
   sẽ fork, đẩy lên fork rồi mở Pull Request vào KTPM2026/HW5 trong thư mục
   member5_23120317/. Tiếp theo mình viết README cho phần của bạn. · summary
 
-● Write(README.md)
-  ⎿  Wrote 49 lines to README.md
+● Write(member5\README.md)
+  ⎿  Wrote 49 lines to member5\README.md
        1 # HW05 – Performance Testing – Thành viên 5
        2 
        3 **Nguyễn Đức Phát – MSSV 23120317**
@@ -2022,8 +2022,8 @@
 
   Ran 1 shell command (ctrl+o to expand)
 
-● Write(scripts\plot_issue_charts.py)
-  ⎿  Wrote 85 lines to scripts\plot_issue_charts.py
+● Write(member5\scripts\plot_issue_charts.py)
+  ⎿  Wrote 85 lines to member5\scripts\plot_issue_charts.py
        1 #!/usr/bin/env python3
        2 """Vẽ biểu đồ minh họa cho GitHub Issues từ .jtl gốc (Soak và St
          ress breakpoint).
@@ -2119,8 +2119,8 @@
   Skill, AI Audit Report và AI Critique. Trước hết là script so sánh p95 với
   baseline. Đây là lõi của Task 3, mình sẽ kiểm thử nó trên số liệu thật:
 
-● Write(scripts\perf_gate.py)
-  ⎿  Wrote 76 lines to scripts\perf_gate.py
+● Write(member5\scripts\perf_gate.py)
+  ⎿  Wrote 76 lines to member5\scripts\perf_gate.py
        1 #!/usr/bin/env python3
        2 """
        3 Cổng hồi quy hiệu năng (Task 3): so sánh p95 theo từng request c
@@ -2140,8 +2140,8 @@
   bỏ hết các báo động giả này. Tiếp theo tôi viết workflow CI mẫu và tài liệu
   Task 3. · summary
 
-● Write(ci\perf-regression.yml)
-  ⎿  Wrote 73 lines to ci\perf-regression.yml
+● Write(member5\ci\perf-regression.yml)
+  ⎿  Wrote 73 lines to member5\ci\perf-regression.yml
        1 # GitHub Actions – Continuous Performance Testing cho eshop-sut 
          (Task 3, bản đề xuất)
        2 # Đặt tại .github/workflows/perf-regression.yml của repo SUT.
@@ -2154,8 +2154,9 @@
        8   push:
      … +65 lines (ctrl+o to expand)
 
-● Write(docs\06_Task3_Continuous_Performance_Testing.md)
-  ⎿  Wrote 82 lines to docs\06_Task3_Continuous_Performance_Testing.md
+● Write(member5\docs\06_Task3_Continuous_Performance_Testing.md)
+  ⎿  Wrote 82 lines to
+     member5\docs\06_Task3_Continuous_Performance_Testing.md
        1 # 06 – Task 3: Đề xuất Continuous Performance Testing (G9.6 – Di
          srupt)
        2 
@@ -2173,7 +2174,7 @@
 ● Có lỗi cú pháp YAML: biểu thức ${{ }} nằm trong flow mapping { }. Mình viết
   lại thành dạng block:
 
-● Update(ci\perf-regression.yml)
+● Update(member5\ci\perf-regression.yml)
   ⎿  Added 5 lines, removed 1 line
       67            }
       68        - uses: actions/upload-artifact@v4
@@ -2196,8 +2197,8 @@
 ● YAML đã hợp lệ. Tiếp theo là Agent Skill: đóng gói toàn bộ quy trình đã làm
   thành một skill dùng lại được cho nhóm endpoint khác.
 
-● Write(skill\perf-testing-workflow\SKILL.md)
-  ⎿  Wrote 71 lines to skill\perf-testing-workflow\SKILL.md
+● Write(member5\skill\perf-testing-workflow\SKILL.md)
+  ⎿  Wrote 71 lines to member5\skill\perf-testing-workflow\SKILL.md
       1 ---
       2 name: perf-testing-workflow
       3 description: Thiết kế, chạy và phân tích performance test (Load /
@@ -2213,8 +2214,8 @@
 ● Tiếp theo là AI Audit Report. Mình liệt kê nguyên văn từng prompt của bạn
   trong phiên này, kèm output và những chỗ đã sửa sau khi review:
 
-● Write(docs\07_AI_Audit_Report.md)
-  ⎿  Wrote 49 lines to docs\07_AI_Audit_Report.md
+● Write(member5\docs\07_AI_Audit_Report.md)
+  ⎿  Wrote 49 lines to member5\docs\07_AI_Audit_Report.md
       1 # 07 – AI Audit Report (Thành viên 5 – Nguyễn Đức Phát, 23120317)
       2 
       3 **Tuyên bố:** I use AI tools for the following tasks.
@@ -2230,8 +2231,8 @@
 ● Cuối cùng là AI Critique (200–300 từ). Đây là bản nháp để bạn chỉnh lại theo
   giọng văn của mình:
 
-● Write(docs\08_AI_Critique.md)
-  ⎿  Wrote 9 lines to docs\08_AI_Critique.md
+● Write(member5\docs\08_AI_Critique.md)
+  ⎿  Wrote 9 lines to member5\docs\08_AI_Critique.md
       1 # 08 – AI Critique (Thành viên 5 – Nguyễn Đức Phát, 23120317)
       2 
       3 AI làm nhanh và đúng phần lớn công việc cơ học: đọc mã nguồn, sin
@@ -2315,3 +2316,751 @@
     23120317_HW05_AI_Performance_<điểm>.zip, gồm cả 2 file .jtl lớn.
 
 ✻ Baked for 3m 36s · done 4:07 PM
+
+❯ /export                                                                       
+  ⎿  Conversation exported to D:\University\Testing\HW05\member5\2026-11-22-1608
+     23-local-command-caveatthe-command-below-was-run-d.txt
+
+❯ ok tôi xuất rồi, điền hộ cho tôi full điểm trừ Agent skill, sau đó zip và đưa 
+  tôi file nộp                                                                  
+
+● Mình điền điểm, tạo PDF rồi đóng gói. Trước hết kiểm tra file transcript và
+  các công cụ chuyển Markdown sang PDF có sẵn:
+
+  Ran 1 shell command (ctrl+o to expand)
+● Transcript không chứa thông tin nhạy cảm. Mình chuyển nó vào docs/ và điền
+  bảng tự đánh giá: các mục khác điểm tối đa, Agent Skill 0 điểm, tổng 90.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Mình sẽ ghép các phần thành một báo cáo Markdown chính, rồi xuất PDF bằng
+  Chrome headless; lưu đồ Mermaid từ Task 3 sẽ được render thành hình. · summary
+
+● Write(member5\scripts\build_pdf.py)
+  ⎿  Wrote 70 lines to member5\scripts\build_pdf.py
+       1 #!/usr/bin/env python3
+       2 """Ghép báo cáo chính (Markdown) và xuất PDF bằng Chrome headles
+         s.
+       3    python scripts/build_pdf.py  -> docs/00_Main_Report.md, pdf/*
+         .pdf
+       4 """
+       5 import re
+       6 import subprocess
+       7 import sys
+       8 from pathlib import Path
+     … +62 lines (ctrl+o to expand)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Đã tạo xong PDF. Mình mở thử trang có lưu đồ Task 3 để kiểm tra Mermaid có
+  render được không:
+
+  Read 1 file, ran 2 shell commands (ctrl+o to expand)
+
+● Sơ đồ Mermaid đang gây khoảng trống trong PDF, nên mình render riêng ra PNG để
+  tìm nguyên nhân và tạo sẵn file ảnh để nhúng vào báo cáo. · summary
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● Sơ đồ đã render nhưng bị cắt cuối và > hiện thành &gt;; mình sẽ sửa nhãn dùng
+  #gt;, render lại với khung cao hơn rồi lưu thành ảnh để nhúng vào PDF. 
+  · summary
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● Sơ đồ đã hiển thị đủ và đúng. Mình nhúng ảnh này vào tài liệu và PDF, rồi
+  build lại:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Lệnh thay thế dòng xử lý Mermaid không khớp nên chưa được áp dụng. Mình sửa
+  trực tiếp:
+
+● Update(member5\scripts\build_pdf.py)
+  ⎿  Added 5 lines, removed 2 lines
+      32 
+      33  def to_html(md_text, title):
+      34      md_text = re.sub(r"<!--.*?-->", "", md_text, flags=re.S)
+      35 -    # khối mermaid -> <div class=mermaid>                      
+      36 -    md_text = re.sub(r"```mermaid\n(.*?)```", lambda m: f'<div 
+         -class="mermaid">\n{m.group(1)}</div>', md_text, flags=re.S)    
+      35 +    # Mermaid không render ổn định trong Chrome headless -> tha
+         +y bằng ảnh đã render sẵn (docs/img)                            
+      36 +    img = (ROOT / "docs/img/task3_flowchart.png").as_uri()     
+      37 +    md_text = re.sub(r"```mermaid\n.*?```", f'<img src="{img}" 
+         +style="max-height:230mm;display:block;margin:auto">',          
+      38 +                     md_text, flags=re.S)                      
+      39 +    md_text = re.sub(r"\n> Bản ảnh của lưu đồ.*?\n", "\n", md_t
+         +ext)                                                           
+      40      body = markdown.markdown(md_text, extensions=["tables", "fe
+          nced_code", "md_in_html"])
+      41      return f"""<!doctype html><html><head><meta charset="utf-8"
+          ><title>{title}</title><style>{CSS}</style>
+      42  </head><body>{body}</body></html>"""
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● Lưu đồ đã hiện đúng trong PDF. Giờ commit, đồng bộ lên PR rồi đóng gói file
+  zip:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● PR đã được cập nhật. Giờ đóng gói file nộp Moodle:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● File nộp đã sẵn sàng:
+  D:\University\Testing\HW05\23120317_HW05_AI_Performance_090.zip (26,5 MB, 723
+  file, đã kiểm tra file zip không bị lỗi).
+
+  Điểm tự đánh giá (trong README.md): Load 30, Stress 20, Spike 20, Task 2 10,
+  Task 3 10, Agent Skill 0, tổng 90. Mình ghi kèm một dòng lý do vì sao Agent
+  Skill 0 điểm: có file skill nhưng chưa có video demo.
+
+  Trong file zip có:
+  - Báo cáo chính: docs/00_Main_Report.md và bản PDF
+    pdf/23120317_HW05_Main_Report.pdf (20 trang, có hình lưu đồ Task 3).
+  - AI Critique và AI Audit Report: mỗi cái có cả bản Markdown lẫn PDF, cùng
+    file transcript phiên AI docs/ai_session_transcript.txt.
+  - 3 test plan đặt tên đúng quy định, kèm .jtl và HTML report của cả 5 lần
+    chạy, gồm 2 file .jtl lớn không có trên GitHub.
+  - Bằng chứng: ảnh dxdiag, ảnh tool và Task Manager, ảnh 3 report view.
+  - Mã nguồn và dữ liệu: dữ liệu CSV, các script, Agent Skill,
+    git_commit_log.txt.
+  - Không đưa vào: file video gốc 1,2 GB (đã có link YouTube) và thư mục .git.
+
+  Repo local có 21 commit. PR #1 đã đồng bộ, có 18 commit.
+
+  Trước khi nộp, bạn nên:
+  1. Đọc và sửa docs/08_AI_Critique.md theo giọng văn của bạn. Bản hiện tại do
+     AI soạn. Nếu bạn sửa, gõ "build lại" để mình tạo lại PDF và file zip.
+  2. Nhờ chủ repo merge PR #1 (https://github.com/KTPM2026/HW5/pull/1). Đề yêu
+     cầu nộp link repo GitHub public chứa test plan và dữ liệu.
+  3. Đổi số điểm trong tên file nếu đổi điểm tự đánh giá. Nếu sau này bạn quay
+     được video demo skill, số cuối tên file sẽ thành 100.
+
+✻ Cogitated for 2m 39s · done 4:11 PM
+
+❯ Xem lại D:\University\Testing\HW05\AI Templates-20261122T091219Z-1-001.zip,   
+  và tuân thủ theo đi. Rà soát bài nộp một lần nữa xem có thiếu gì không.       
+
+● Mình giải nén bộ template vào một thư mục riêng rồi đọc:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Đã đọc xong 6 template; bài hiện tại chưa đáp ứng vài yêu cầu bắt buộc, trong
+  đó có 2 điểm mâu thuẫn trực tiếp với AI Agreement. Tôi sẽ kiểm tra transcript
+  xem có mốc thời gian để đáp ứng yêu cầu prompt log có timestamp. · summary
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Đã đối chiếu xong 6 template và các vấn đề còn tồn đọng. Tôi sẽ viết lại báo
+  cáo AI Audit theo mẫu AI-02 và bổ sung các biểu mẫu còn thiếu, rồi điền vào
+  các file .docx gốc. · summary
+
+● Write(member5\scripts\ai_forms_data.py)
+  ⎿  Wrote 169 lines to member5\scripts\ai_forms_data.py
+       1 """Dữ liệu dùng chung cho các biểu mẫu AI (AI-02 Audit, AI-03 Di
+         sclosure, AI-04 Reflective, AI-05 Privacy).
+       2 Mọi trích dẫn transcript trỏ tới docs/ai_session_transcript.txt
+         (số dòng) – output nguyên văn nằm ở đó.
+       3 """
+       4 
+       5 STUDENT = {
+       6     "name": "Nguyễn Đức Phát",
+       7     "id": "23120317",
+       8     "cohort": "Nhóm KTPM2026 – Thành viên 5",
+     … +161 lines (ctrl+o to expand)
+
+● Mình đã cập nhật Disclosure để nêu rõ ảnh 3 report view do AI chụp và ảnh tài
+  nguyên do AI cắt từ video của bạn. Tiếp theo mình sẽ thêm một hàng audit cho
+  các ảnh này. · summary
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Giờ viết script sinh toàn bộ biểu mẫu. Mỗi biểu mẫu có bản Markdown và bản
+  .docx điền vào đúng template gốc:
+
+● Write(member5\scripts\build_ai_forms.py)
+  ⎿  Wrote 317 lines to member5\scripts\build_ai_forms.py
+       1 #!/usr/bin/env python3
+       2 """Sinh các biểu mẫu AI theo template FIT@HCMUS (AI-02..AI-05) +
+          prompt log, dạng Markdown và .docx.
+       3    python scripts/build_ai_forms.py "<thư mục chứa AI Templates/
+         *.docx>"
+       4 """
+       5 import copy
+       6 import sys
+       7 from collections import Counter
+       8 from pathlib import Path
+     … +309 lines (ctrl+o to expand)
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Các biểu mẫu đã điền xong; phần còn trống (chữ ký, mục Privacy Checklist và
+  câu 5 của Reflective Statement) cần bạn tự xử lý. Tiếp theo mình sẽ chụp ảnh
+  trang GitHub Issues theo yêu cầu của đề bài. · summary
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● Ảnh trang Issues đã chụp rõ. Tiếp theo tôi thêm mục Mandatory Disclosure vào
+  cuối báo cáo chính, rồi cập nhật README và script tạo PDF để xuất các biểu mẫu
+  mới. · summary
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Phần chèn đoạn Disclosure vào báo cáo chính lại không khớp, nên mình sửa trực
+  tiếp:
+
+● Update(member5\scripts\build_pdf.py)
+  ⎿  Added 9 lines, removed 2 lines
+      58      for i, p in enumerate(MAIN_PARTS):
+      59          txt = (ROOT / p).read_text(encoding="utf-8")
+      60          parts.append(("" if i == 0 else '\n\n<div class="pb"></
+          div>\n\n') + txt)
+      61 +    sys.path.insert(0, str(ROOT / "scripts"))                  
+      62 +    from ai_forms_data import DISCLOSURE                       
+      63 +    if "## Mandatory Disclosure" in parts[0]:  # README đã có đ
+         +oạn này -> bỏ khỏi phần đầu, đặt ở cuối báo cáo                
+      64 +        parts[0] = parts[0].split("## Mandatory Disclosure")[0]
+      65      main_md = ("# HW05 – Performance Testing – Báo cáo chính (T
+          hành viên 5 – 23120317)\n\n"
+      62 -               "> File ghép tự động từ README và các tài liệu t
+         -rong `docs/` bằng `scripts/build_pdf.py`.\n\n"                 
+      63 -               + "".join(parts))                               
+      66 +               "> File ghép tự động từ README và các tài liệu t
+         +rong `docs/` bằng `scripts/build_pdf.py`. "                    
+      67 +               "Phụ lục AI: Appendix A `docs/prompt_log.md`, AI
+         + Audit Report, Disclosure Form, Reflective Statement, "        
+      68 +               "Privacy Checklist (`pdf/`, `ai-forms/`).\n\n"  
+      69 +               + "".join(parts)                                
+      70 +               + '\n\n<div class="pb"></div>\n\n## Mandatory Di
+         +sclosure\n\n"' + DISCLOSURE + '"\n')                           
+      71      (ROOT / "docs/00_Main_Report.md").write_text(main_md, encod
+          ing="utf-8")
+      72      pdf(to_html(main_md, "23120317 HW05 Main Report"), ROOT / "
+          pdf/23120317_HW05_Main_Report.pdf")
+      73      for src, name in [("docs/08_AI_Critique.md", "23120317_HW05
+          _AI_Critique.pdf"),
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● PDF đã đọc rõ. Bảng audit có 15 artifact, cột verdict hiển thị đầy đủ. Giờ
+  commit, đồng bộ lên PR và đóng gói lại file zip:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Mình đã chỉnh bài theo đúng bộ template và đóng gói lại. File nộp mới:
+  D:\University\Testing\HW05\23120317_HW05_AI_Performance_090.zip (27,7 MB, 744
+  file). Mình đã kiểm tra đủ 31 mục bắt buộc, không thiếu mục nào. Tuy nhiên còn
+  vài việc chỉ bạn làm được, nên chưa nộp ngay được.
+
+  Đã làm theo template:
+
+  Template: [AI-02] AI Audit Report
+  Đã làm: Viết lại đúng mẫu: 15 artifact, mỗi cái có prompt nguyên văn,
+    output, verdict, lý do (trích ISTQB, tài liệu SQLite/JMeter hoặc log gốc)
+    và phần sửa. Thống kê: 3 VALID, 6 INVALID, 6 INCOMPLETE. Có kết luận
+    80–150 từ, đoạn Mandatory Disclosure và ô chữ ký
+  ────────────────────────────────────────
+  Template: [AI-03] Disclosure Form
+  Đã làm: Trả lời đủ 6 câu hỏi, khai Category 4
+  ────────────────────────────────────────
+  Template: [AI-04] Reflective Statement
+  Đã làm: Đã trả lời câu 1–4 bằng các dữ kiện có thật. Câu 5 để trống cho bạn
+    tự viết
+  ────────────────────────────────────────
+  Template: [AI-05] Privacy Checklist
+  Đã làm: Chỉ tick những mục có bằng chứng. Các mục cần bạn tự xác nhận vẫn để
+    trống
+  ────────────────────────────────────────
+  Template: Appendix A
+  Đã làm: docs/prompt_log.md: liệt kê 13 prompt nguyên văn, có mốc giờ ước
+    lượng và số dòng trong transcript
+
+  - Định dạng: mỗi biểu mẫu có 3 bản: Markdown (docs/), PDF (pdf/) và .docx điền
+    trên template gốc (ai-forms/).
+  - Báo cáo chính và README: đã thêm đoạn Mandatory Disclosure ở cuối.
+  - Bằng chứng mới: ảnh trang GitHub Issues (danh sách và từng issue #2–#7)
+    trong evidence/github_issues/.
+  - README: thêm link fork public, vì PR #1 chưa được merge.
+  - Đã đồng bộ: repo local (24 commit) và PR #1 (19 commit).
+
+  Phải sửa trước khi nộp. Đây là quy định trong AI Agreement, mình không làm 
+  thay được:
+  1. Bug report phải do bạn viết 100% (§11: "AI may not draft the description").
+     Nội dung 6 issue #2–#7 do mình soạn. Bạn cần sửa phần mô tả trên GitHub
+     bằng lời của mình, rồi bảo mình chụp lại ảnh trang Issues.
+  2. AI Critique (docs/08_AI_Critique.md) và câu 5 của Reflective Statement: bạn
+     tự viết.
+  3. Đoạn Mandatory Disclosure đang có một chỗ trong ngoặc vuông: "[the AI
+     Critique and the GitHub bug report descriptions – to be rewritten by me…]".
+     Sau khi làm xong việc 1 và 2, bạn sửa lại câu này cho đúng sự thật, trong
+     scripts/ai_forms_data.py.
+  4. Ký 4 file .docx trong ai-forms/. Ở Privacy Checklist, tự tick 5 mục để
+     trống sau khi kiểm tra; riêng mục ghi chú "CI chưa chạy trên GitHub
+     Actions" thì không tick, vì đúng là chưa chạy.
+  5. Kiểm tra số mục ISTQB trong phần lý do của Audit Report, đối chiếu với
+     syllabus dùng trên lớp. Mình trích theo CTFL v4.0 và CT-PT nhưng không tra
+     lại được bản gốc.
+  6. Xuất lại transcript (/export) ở cuối phiên để transcript chứa cả lượt này,
+     rồi ghi đè docs/ai_session_transcript.txt.
+
+  Làm xong các việc trên, bạn gõ "build lại". Mình sẽ chạy lại build_ai_forms.py
+  và build_pdf.py, chụp lại ảnh trang Issues, đóng gói zip mới và đồng bộ lên
+  PR.
+
+  Ngoài phạm vi bài này: [AI-06] Student Acknowledgement nộp một lần đầu môn,
+  nên không đưa vào bài HW05. [AI-01] là bản quy định để đọc, không cần điền.
+
+✻ Brewed for 6m 28s · done 4:19 PM
+
+❯ hỏi tôi từng câu cho tôi trả lời rồi paraphrase lại đưa vô                    
+
+● Được. Trước khi bắt đầu, có một điểm bạn cần biết:
+
+  - AI Critique, câu 5 Reflective, Privacy Checklist: mình diễn đạt lại ý của
+    bạn. Đây là dạng "AI hỗ trợ chỉnh câu chữ" (Category 3), được phép. Mình sẽ
+    ghi rõ việc này trong Disclosure.
+  - 6 bug report: quy định yêu cầu bạn viết 100%. Với phần này mình giữ nguyên 
+    lời của bạn, chỉ sửa chính tả và định dạng, không viết lại ý.
+
+  Mình hỏi từng câu, theo 4 phần: AI Critique, Reflective câu 5, 6 bug report,
+  Privacy Checklist.
+
+  ---
+
+  Phần 1: AI Critique, câu 1/3
+
+  Trong cả quá trình làm bài, chỗ nào AI làm sai, thiên lệch hoặc thiếu sót mà 
+  bạn thấy đáng chú ý nhất? Nêu 2–3 ví dụ bạn nhớ hoặc thấy quan trọng nhất. Bạn
+  có thể chọn trong danh sách dưới đây hoặc kể chuyện khác:
+
+  - Test plan dùng Groovy nên chạy lỗi trên JDK 25.
+  - Stress 500 VU không tìm được điểm gãy.
+  - Message assertion ghi "403 = khóa tài khoản", nhưng thực tế là lỗi kết nối.
+  - CPU báo 113% do script giám sát đọc sai.
+  - AI ở Task 2 nối hai phiên chạy khác ngày thành một, hoặc tự đặt SLA 200 ms
+    sau khi xem kết quả.
+  - AI ở Task 2 đưa con số lợi ích (×3–4, +20–40%) không có số đo.
+  - AI tự soạn và đăng bug report, trái quy định.
+
+  Bạn trả lời ngắn, viết tự nhiên là được.
+
+✻ Baked for 12s · done 4:21 PM
+
+❯ - CPU báo 113% do script giám sát đọc sai.                                    
+  - AI ở Task 2 đưa con số lợi ích (×3–4, +20–40%) không có số đo.              
+  - Test plan dùng Groovy nên chạy lỗi trên JDK 25.                             
+
+● Mình đã ghi lại 3 ví dụ: CPU 113%, con số lợi ích không có số đo, và Groovy
+  lỗi trên JDK 25.
+
+  ---
+
+  Phần 1: AI Critique, câu 2/3
+
+  Theo bạn, vì sao AI không tự phát hiện ra 3 lỗi này? Bạn nói theo cách bạn
+  hiểu là được. Nếu cần gợi ý, có thể nghĩ theo các hướng sau:
+
+  - CPU 113%: AI tin vào con số script trả về mà không tự hỏi con số đó có hợp
+    lý không. Hoặc nó không biết định dạng số của PowerShell có dấu phẩy hàng
+    nghìn.
+  - Con số lợi ích không có số đo: prompt hỏi "lợi ích kỳ vọng", nên AI điền một
+    con số cho đủ, dựa vào kiến thức chung chứ không đo.
+  - Groovy: AI không kiểm tra môi trường thật (phiên bản JDK) trước khi chọn
+    công cụ.
+  - Hoặc một lý do khác: prompt của bạn thiếu thông tin, bạn chưa yêu cầu AI
+    kiểm chứng…
+
+✻ Baked for 5s · done 4:22 PM
+
+❯ - CPU 113%: AI tin vào con số script trả về mà không tự hỏi con số đó có hợp  
+  lý không. Hoặc nó không biết định dạng số của PowerShell có dấu phẩy hàng     
+  nghìn.                                                                        
+  - Con số lợi ích không có số đo: prompt hỏi "lợi ích kỳ vọng", nên AI điền    
+  một con số cho đủ, dựa vào kiến thức chung chứ không đo.                      
+  - Groovy: AI không kiểm tra môi trường thật (phiên bản JDK) trước khi chọn    
+  công cụ.                                                                      
+    Thêm nữa là AI chỉ lấy số nó nhận được rồi bỏ vào, không có giám sát hay    
+  double check                                                                  
+
+● Mình đã ghi lại. Ý bạn thêm vào, rằng AI chỉ lấy số nhận được rồi đưa thẳng
+  vào báo cáo mà không kiểm tra lại, là điểm mấu chốt. Mình sẽ dùng ý này làm
+  câu chủ đề của đoạn 2.
+
+  ---
+
+  Phần 1: AI Critique, câu 3/3
+
+  Qua bài này, bạn rút ra nguyên tắc gì khi làm việc cùng AI? Ví dụ: lần sau
+  dùng AI bạn sẽ làm khác đi điều gì, hoặc không tin AI ở chỗ nào. Bạn có thể
+  nêu 1–3 ý.
+
+✻ Worked for 3s · done 4:23 PM
+
+❯ Khi làm việc với AI phải có con người giám sát và double check lại các số     
+  liệu nó đưa ra, yêu cầu AI check lại toàn bộ khi làm xong.                    
+
+● Phần AI Critique đã đủ ý. Mình diễn đạt lại thành đoạn văn hoàn chỉnh, giữ
+  đúng 3 ví dụ, nguyên nhân và nguyên tắc bạn nêu:
+
+● Write(member5\docs\08_AI_Critique.md)
+  ⎿  Added 4 lines, removed 4 lines
+      1  # 08 – AI Critique (Thành viên 5 – Nguyễn Đức Phát, 23120317)
+      2 
+      3 -AI làm tốt phần cơ học (đọc mã, sinh test plan, chạy JMeter, tín
+        -h thống kê), nhưng sai ở chỗ cần phán đoán. AI dùng Groovy mà kh
+        -ông kiểm tra JDK nên test lỗi ngay lần đầu. Nó ước lượng thấp nă
+        -ng lực hệ thống, khiến kịch bản Stress 500 VU không tìm được điể
+        -m gãy. Nó còn tự viết message assertion "403 = tài khoản bị khóa
+        -", làm bảng lỗi trông như sự cố khóa tài khoản, trong khi thực t
+        -ế toàn là lỗi kết nối. Ở Task 2, AI đọc đúng số liệu nhưng diễn 
+        -giải sai ngữ cảnh. Nó nối hai phiên chạy khác ngày thành một chu
+        -ỗi. Nó tự đặt ngưỡng 200 ms sau khi xem kết quả để chấm Soak "kh
+        -ông đạt". Nó quy nút thắt cho event loop dù số đo theo từng bước
+        - cho thấy hàng đợi SQLite mới là phần lớn. Nó cũng đưa ra năm co
+        -n số lợi ích ("×3–4", "+20–40%") không có phép đo nào.          
+      3 +Trong bài này, AI sai ở ba chỗ mà tôi thấy đáng chú ý nhất. Thứ 
+        +nhất, khi sinh test plan JMeter, AI dùng script Groovy mà không 
+        +kiểm tra máy tôi đang chạy JDK 25. Vì vậy lần chạy thử đầu tiên 
+        +báo lỗi "Unsupported class file major version 69", và các bước t
+        +hêm giỏ hàng, thanh toán không chạy được. Thứ hai, script giám s
+        +át tài nguyên do AI viết in số CPU có dấu phẩy phân cách hàng ng
+        +hìn (ví dụ "1,065.9"), làm vỡ cột trong file CSV. AI vẫn đọc fil
+        +e đó và báo CPU của tiến trình node là 113%, trong khi giá trị đ
+        +úng chỉ khoảng 54% trung bình và 90% lúc cao nhất. Thứ ba, ở Tas
+        +k 2, AI đề xuất các cách tối ưu kèm những con số lợi ích như "nh
+        +anh hơn 3–4 lần" hay "tăng 20–40% năng lực" mà không có phép đo 
+        +nào chứng minh.                                                 
+      4 
+      5 -AI không tự phát hiện các lỗi này vì nó suy luận từ kiến thức ch
+        -ung về Node.js và SQLite, thay vì đối chiếu với dữ liệu thô như 
+        -`pre_run_db.txt`, `timeStamp`, lỗi theo từng label. Prompt của t
+        -ôi cũng thiếu ngữ cảnh: không nêu SLA định trước và không nói cá
+        -c lần chạy thuộc hai phiên. Khi được hỏi về "lợi ích kỳ vọng", A
+        -I có xu hướng điền một con số cho trọn câu trả lời.             
+      5 +Theo tôi, nguyên nhân chung là AI chỉ lấy con số nó nhận được rồ
+        +i đưa thẳng vào báo cáo, không có bước giám sát hay kiểm tra lại
+        +. Với con số CPU, AI tin vào kết quả script trả về mà không tự h
+        +ỏi con số đó có hợp lý không, cũng không để ý đến định dạng số c
+        +ủa PowerShell. Với Groovy, AI chọn công cụ mà không kiểm tra môi
+        + trường thật. Với các con số lợi ích, vì tôi hỏi "lợi ích kỳ vọn
+        +g" nên AI điền một con số cho đủ câu trả lời, dựa vào kiến thức 
+        +chung chứ không dựa vào đo đạc.                                 
+      6 
+      7 -Nguyên tắc tôi rút ra: mọi kết luận của AI phải truy về được một
+        - dòng trong log gốc. Con số nào không có phép đo thì đánh dấu là
+        - giả thuyết. Muốn AI phân tích tốt, prompt phải mang theo ngữ cả
+        -nh thực nghiệm, không chỉ dữ liệu.                              
+      7 +Nguyên tắc tôi rút ra là khi làm việc với AI luôn phải có con ng
+        +ười giám sát và kiểm tra lại các số liệu nó đưa ra, đối chiếu vớ
+        +i dữ liệu gốc như file .jtl. Ngoài ra, sau khi AI làm xong, tôi 
+        +sẽ yêu cầu nó tự rà soát lại toàn bộ kết quả trước khi tôi chấp 
+        +nhận.                                                           
+      8 
+      9 -<!-- ~285 từ. Bản nháp do AI soạn từ các lỗi đã ghi nhận; sinh v
+        -iên cần đọc lại, sửa theo trải nghiệm và giọng văn của mình trướ
+        -c khi nộp. -->                                                  
+      9 +<!-- Nội dung do sinh viên trả lời qua 3 câu hỏi (prompt log #14
+        +–#17); Claude Code chỉ diễn đạt lại thành đoạn văn (Category 3 –
+        + feedback/revision). -->                                        
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Bản này dài 328 từ, vượt giới hạn 300. Mình rút gọn bớt câu chữ nhưng giữ
+  nguyên các ý:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Đã xong AI Critique: 298 từ, nằm trong khoảng 200–300. Nội dung gồm đúng 3 ví
+  dụ, nguyên nhân "AI lấy số rồi đưa thẳng vào báo cáo, không kiểm tra lại", và
+  nguyên tắc của bạn. Bạn xem file docs/08_AI_Critique.md, nếu muốn sửa câu nào
+  thì nói mình.
+
+  ---
+
+  Phần 2: Reflective Statement, câu 5
+
+  Template hỏi: "Qua bài này, bạn học được điều gì mà nếu chỉ chấp nhận output 
+  của AI thì sẽ không học được? AI đã giúp hoặc không giúp bạn hiểu về kiểm thử 
+  như thế nào? Bạn sẽ giữ một nguyên tắc nào cho các bài sau?"
+
+  Câu này khác Critique: Critique nói về lỗi của AI, còn câu này nói về điều 
+  chính bạn hiểu ra về performance testing. Gợi ý một vài hướng:
+  - Hiểu ra sự khác nhau giữa Load, Stress, Spike và Soak khi nhìn số liệu thật.
+  - Hiểu ra vì sao phải xem p95 chứ không chỉ xem số trung bình.
+  - Hiểu ra rằng 0% lỗi chưa chắc hệ thống đã ổn: Soak 0 lỗi nhưng chậm dần.
+  - Biết cách đọc file .jtl, hoặc biết cách tìm điểm gãy.
+  - …
+
+  Bạn trả lời 2–3 ý.
+
+✻ Churned for 36s · done 4:24 PM
+
+❯ - Hiểu ra sự khác nhau giữa Load, Stress, Spike và Soak khi nhìn số liệu      
+  thật. - Biết cách đọc file .jtl, hoặc biết cách tìm điểm gãy. AI chạy các bài 
+  test để hiểu hơn về cách kiểm thử được thực hiện, các bài sau sẽ giữ nguyên   
+  tắt review lại output của AI, và hỏi lại AI từ những output nó đưa ra để hiểu 
+  bài hơn.                                                                      
+
+● Mình diễn đạt lại thành câu trả lời cho câu 5. Có kèm vài số liệu từ chính các
+  lần chạy của bạn để minh họa, ý vẫn giữ nguyên của bạn:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Đã đưa vào câu 5 của Reflective Statement.
+
+  ---
+
+  Phần 3: Bug report (6 issue)
+
+  Với phần này mình giữ nguyên lời bạn, chỉ sửa chính tả và định dạng Markdown.
+  Các bằng chứng đã có sẵn (biểu đồ, bảng số liệu, lệnh curl) sẽ được giữ lại
+  bên dưới phần mô tả của bạn.
+
+  Issue #2: Order History chậm dần theo số đơn hàng
+
+  Dữ liệu để bạn tham khảo:
+  - Nguyên nhân: API GET /api/orders/my-orders không có index trên cột
+    orders.user_id và trả về toàn bộ đơn của user, không phân trang.
+  - Kết quả Soak 15 phút:
+    - p95 tăng từ 47 lên 393 ms.
+    - Response tăng từ khoảng 18 KB lên 35 KB.
+    - Các API khác cũng chậm theo.
+  - Đo trên bản sao DB 117.000 đơn: mỗi truy vấn mất 10,7 ms. Thêm index thì còn
+    1,2 ms, thêm cả index lẫn phân trang thì còn 0,18 ms.
+
+  Bạn viết 2–4 câu mô tả bug này theo cách bạn hiểu: lỗi là gì, ảnh hưởng thế
+  nào, và bạn đề xuất sửa ra sao.
+
+✻ Worked for 15s · done 4:27 PM
+❯ API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân    
+  trang. Toàn bộ đơn được truy vấn làm tăng đỗ trễ và kích thước response       
+
+● Mình ghi nguyên văn câu của bạn, chỉ sửa "đỗ trễ" thành "độ trễ":
+
+  ▎ API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân 
+  ▎ trang. Toàn bộ đơn được truy vấn làm tăng độ trễ và kích thước response.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Issue #3: Giỏ hàng không bị xóa sau checkout
+
+  Dữ liệu để bạn tham khảo:
+  - Lỗi thấy được: sau khi checkout, gọi GET /api/cart vẫn thấy các sản phẩm vừa
+    thanh toán. Đặc tả FR-08 yêu cầu giỏ phải được xóa.
+  - Vì sao giỏ cứ dài ra: giỏ được lưu trong RAM của server. Thêm cùng một sản
+    phẩm lại tạo một dòng mới thay vì tăng số lượng (vi phạm FR-07), nên giỏ
+    tăng mãi.
+  - Kết quả Soak 15 phút: response của GET /api/cart tăng từ 8,8 KB lên 15,6 KB,
+    RAM của tiến trình node tăng từ 109 lên 127 MB.
+
+  Bạn viết 2–4 câu mô tả bug này theo cách bạn hiểu.
+
+✻ Churned for 10s · done 4:28 PM
+
+❯ Còn nhiều không, đưa ra hết để tôi trả lời một lượt.                          
+
+● Còn 5 issue và 6 câu xác nhận. Bạn trả lời một lượt theo số thứ tự. Với các
+  issue, mỗi cái 1–3 câu theo cách bạn hiểu là đủ.
+
+  ---
+
+  Phần 3: Bug report (mình giữ nguyên lời bạn, chỉ sửa chính tả)
+
+  3. Issue #3: Giỏ hàng không bị xóa sau checkout
+  - Sau checkout, GET /api/cart vẫn còn sản phẩm đã thanh toán (vi phạm FR-08).
+  - Thêm cùng sản phẩm lại tạo dòng mới thay vì tăng số lượng (vi phạm FR-07).
+  - Giỏ lưu trong RAM nên tăng mãi: Soak cho thấy response giỏ tăng từ 8,8 lên
+    15,6 KB, RAM node tăng từ 109 lên 127 MB.
+
+  4. Issue #4: Khóa tài khoản sai đặc tả FR-02
+  - Đặc tả: mỗi lần sai +1, sai ≥ 3 lần thì khóa 30 giây.
+  - Code: mỗi lần sai +2, nên bị khóa ngay sau 2 lần sai, và khóa 180 giây.
+  - curl 3 lần sai trả về 401, 401, 403.
+
+  5. Issue #5: Server từ chối kết nối khi vượt ~1.100 người dùng
+  - Stress 400 → 2000 VU: throughput bão hòa ở khoảng 900–950 RPS.
+  - Từ khoảng 1.100 VU, server từ chối kết nối; lỗi tăng từ 4,5% lên hơn 90%, và
+    lượng request thành công sụp xuống còn khoảng 50 RPS.
+  - Server không crash và tự hồi phục khi giảm tải.
+
+  6. Issue #6: GET /api/orders/:id không cần đăng nhập (IDOR)
+  - Không gửi token vẫn xem được đầy đủ đơn hàng của người khác: user_id, số
+    tiền, địa chỉ giao hàng.
+
+  7. Issue #7: Login trả về mật khẩu dạng plaintext
+  - Đăng nhập thành công thì response trả nguyên bản ghi user, gồm cả
+    "password":"Test1234!".
+
+  ---
+
+  Phần 4: Xác nhận Privacy Checklist (trả lời Có hoặc Không)
+
+  8. Bạn đã đọc AI Use Agreement của môn học chưa?
+
+  9. Bạn có hiểu những artifact nào không được dùng AI tạo không (bug report,
+  video thuyết minh, phần phản tư…)?
+
+  10. Bạn có tự kiểm tra lại số mục ISTQB trích trong Audit Report so với
+  syllabus trên lớp không? Nếu chưa, mình sẽ đổi phần trích dẫn thành "ISTQB
+  CT-PT, chương …" mà không ghi số mục cụ thể, để tránh trích sai.
+
+  11. Sau khi bạn sửa xong các bug report, bạn xác nhận AI Critique đã là phần
+  của bạn chưa?
+
+  12. Bạn có sẵn sàng cho buổi vấn đáp 5–7 phút nếu bị gọi không?
+
+✻ Cogitated for 10s · done 4:29 PM
+
+❯ Issue #3: Giỏ hàng không bị xóa sau checkout                                  
+  Sau khi thanh toán thành công, các sản phẩm vẫn còn trong giỏ hàng khi gọi    
+  GET /api/cart, thay vì được xóa như yêu cầu FR-08. Ngoài ra, khi thêm một sản 
+  phẩm đã tồn tại, hệ thống tạo dòng dữ liệu mới thay vì tăng số lượng sản      
+  phẩm theo FR-07. Điều này khiến dữ liệu giỏ hàng bị trùng lặp, dung lượng     
+  response tăng dần và tiêu tốn RAM của server theo thời gian.                  
+  Issue #4: Khóa tài khoản sai đặc tả FR-02                                     
+  Logic đếm số lần đăng nhập sai đang tăng bộ đếm thêm 2 thay vì 1 sau mỗi lần  
+  thử. Đồng thời, thời gian khóa tài khoản là 180 giây thay vì 30 giây như đặc  
+  tả FR-02. Điều này khiến tài khoản bị khóa sớm hơn dự kiến, gây bất tiện cho  
+  người dùng và không tuân thủ yêu cầu nghiệp vụ.                               
+  Issue #5: Server từ chối kết nối khi vượt ~1.100 người dùng                   
+  Khi số lượng người dùng đồng thời tăng lên khoảng 1.100, server bắt đầu từ    
+  chối kết nối và tỷ lệ request thất bại tăng đột biến. Throughput đã bão hòa ở 
+  khoảng 900–950 RPS trước khi lượng request thành công sụt giảm mạnh. Điều     
+  này cho thấy hệ thống có giới hạn về khả năng xử lý tải đồng thời, làm giảm   
+  nghiêm trọng khả năng phục vụ khi lưu lượng tăng cao, dù server vẫn có thể tự 
+  phục hồi sau khi giảm tải.                                                    
+  Issue #6: GET /api/orders/:id không cần đăng nhập (IDOR)                      
+  API cho phép truy xuất thông tin đơn hàng chỉ bằng ID mà không yêu cầu xác    
+  thực hoặc kiểm tra quyền sở hữu đơn hàng. Người không đăng nhập có thể xem dữ 
+  liệu nhạy cảm của người khác như user ID, tổng tiền và địa chỉ giao hàng.     
+  Đây là lỗ hổng bảo mật nghiêm trọng, có thể dẫn đến rò rỉ thông tin cá nhân   
+  và dữ liệu giao dịch của khách hàng.                                          
+  Issue #7: Login trả về mật khẩu dạng plaintext                                
+  Sau khi đăng nhập thành công, API trả về toàn bộ bản ghi người dùng, bao gồm  
+  cả trường password chứa mật khẩu dạng plaintext. Điều này khiến thông tin xác 
+  thực bị lộ ngay trong response và có thể bị khai thác nếu dữ liệu được lưu    
+  trong log, cache hoặc bị các bên không có quyền truy cập. API cần loại bỏ     
+  hoàn toàn trường mật khẩu khỏi response trả về cho client.                    
+  Phần 4 xác nhận có hết cho tôi.                                               
+
+● Mình dùng nguyên văn phần bạn viết cho 6 issue. Mục ISTQB bạn xác nhận đã kiểm
+  tra nên giữ nguyên trích dẫn hiện tại. Giờ mình cập nhật phần mô tả của các
+  issue trên GitHub: phần "Mô tả" thay bằng lời của bạn, các mục bằng chứng (số
+  liệu, biểu đồ, curl) giữ lại bên dưới:
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+● Các issue trên GitHub đã cập nhật xong; tiếp theo mình đồng bộ lại
+  05_GitHub_Issues.md, hàng #14–#15 trong Audit Report, đoạn Disclosure, câu 4
+  Disclosure Form và Privacy Checklist, rồi ghi các lượt hỏi đáp này vào prompt
+  log. · summary
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Phần thêm vào prompt log không khớp chuỗi (do cách thoát dấu gạch chéo ngược).
+  Mình xem đúng dòng đó trong file rồi sửa:
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+● Update(member5\scripts\build_ai_forms.py)
+  ⎿  Added 8 lines
+      32      ("22/11/2026 ~16:00", "ok làm đi", 2116, "Task 3, Agent Ski
+          ll, AI Audit Report, bản nháp AI Critique"),
+      33      ("22/11/2026 ~16:09", "ok tôi xuất rồi, điền hộ cho tôi ful
+          l điểm trừ Agent skill, sau đó zip và đưa tôi file nộp", None,
+          "Điền tự đánh giá 90, PDF, đóng gói zip"),
+      34      ("22/11/2026 ~16:13", "Xem lại D:\\University\\Testing\\HW0
+          5\\AI Templates-20261122T091219Z-1-001.zip, và tuân thủ theo đi
+          . Rà soát bài nộp một lần nữa xem có thiếu gì không.", None, "Đ
+          ối chiếu 6 template, viết lại Audit Report theo AI-02, thêm Dis
+          closure/Reflective/Privacy, prompt log, ảnh trang Issues"),
+      35 +    ("22/11/2026 ~16:25", "hỏi tôi từng câu cho tôi trả lời rồi
+         + paraphrase lại đưa vô", None, "Hỏi lần lượt các câu cho Critiq
+         +ue / Reflective / bug report / checklist"),                    
+      36 +    ("22/11/2026 ~16:27", "- CPU báo 113% do script giám sát đọ
+         +c sai. - AI ở Task 2 đưa con số lợi ích (×3–4, +20–40%) không c
+         +ó số đo. - Test plan dùng Groovy nên chạy lỗi trên JDK 25.", No
+         +ne, "Ghi nhận – Critique câu 1"),                              
+      37 +    ("22/11/2026 ~16:29", "(Critique câu 2 – chọn lại 3 nguyên 
+         +nhân gợi ý) + \"Thêm nữa là AI chỉ lấy số nó nhận được rồi bỏ v
+         +ào, không có giám sát hay double check\"", None, "Ghi nhận – Cr
+         +itique câu 2"),                                                
+      38 +    ("22/11/2026 ~16:31", "Khi làm việc với AI phải có con ngườ
+         +i giám sát và double check lại các số liệu nó đưa ra, yêu cầu A
+         +I check lại toàn bộ khi làm xong.", None, "Diễn đạt lại thành A
+         +I Critique 298 từ"),                                           
+      39 +    ("22/11/2026 ~16:34", "- Hiểu ra sự khác nhau giữa Load, St
+         +ress, Spike và Soak khi nhìn số liệu thật. - Biết cách đọc file
+         + .jtl, hoặc biết cách tìm điểm gãy. AI chạy các bài test để hiể
+         +u hơn về cách kiểm thử được thực hiện, các bài sau sẽ giữ nguyê
+         +n tắt review lại output của AI, và hỏi lại AI từ những output n
+         +ó đưa ra để hiểu bài hơn.", None, "Diễn đạt lại thành Reflectiv
+         +e câu 5"),                                                     
+      40 +    ("22/11/2026 ~16:36", "API này trả về toàn bộ đơn, trong kh
+         +i chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được 
+         +truy vấn làm tăng đỗ trễ và kích thước response", None, "Giữ ng
+         +uyên văn làm mô tả Issue #2 (chỉ sửa chính tả)"),              
+      41 +    ("22/11/2026 ~16:38", "Còn nhiều không, đưa ra hết để tôi t
+         +rả lời một lượt.", None, "Liệt kê các câu còn lại"),           
+      42 +    ("22/11/2026 ~16:40", "(Mô tả Issue #3–#7 do sinh viên viết
+         + – nguyên văn trong docs/05_GitHub_Issues.md, mục \"Mô tả\") + 
+         +\"Phần 4 xác nhận có hết cho tôi.\"", None, "Cập nhật nguyên vă
+         +n mô tả issue #3–#7 lên GitHub; tick Privacy Checklist"),      
+      43  ]
+      44  SUBAGENT = ("22/11/2026 ~15:35", "docs/task2/ai_analysis_prompt
+          .md", "docs/task2/ai_analysis_output_raw.md")
+      45 
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Còn 2 ô chưa tick trong Privacy Checklist. Mình kiểm tra đó là những mục nào:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Chỉ còn đúng mục "CI chưa chạy trên GitHub Actions" chưa tick. Mục này giữ
+  nguyên vì đúng là chưa chạy. Mình xem lại ảnh một issue vừa chụp:
+
+  Read 1 file, ran 1 shell command (ctrl+o to expand)
+
+● Ảnh đã hiện đúng phần mô tả bạn viết. Commit, đồng bộ PR và đóng gói lại file
+  zip:
+
+  Ran 1 shell command (ctrl+o to expand)
+
+● Mình đã đưa câu trả lời của bạn vào tất cả các phần và đóng gói lại:
+  D:\University\Testing\HW05\23120317_HW05_AI_Performance_090.zip (27,8 MB, kiểm
+  tra file zip không lỗi).
+
+  Những gì đã cập nhật:
+  - AI Critique (docs/08_AI_Critique.md): ý của bạn, mình diễn đạt lại thành
+    đoạn văn 298 từ. Gồm 3 ví dụ (CPU 113%, con số lợi ích không có số đo,
+    Groovy lỗi trên JDK 25), nguyên nhân "AI lấy số rồi đưa thẳng vào báo cáo,
+    không kiểm tra lại", và nguyên tắc con người phải giám sát, kiểm tra lại số
+    liệu.
+  - Reflective Statement, câu 5: ý của bạn về sự khác nhau giữa 4 loại kiểm thử,
+    cách đọc .jtl và tìm điểm gãy, và nguyên tắc luôn review rồi hỏi ngược lại
+    AI.
+  - 6 issue trên GitHub (#2–#7): phần "Mô tả" giờ là nguyên văn lời bạn, mình
+    chỉ sửa "đỗ trễ" thành "độ trễ". Phần bằng chứng (số liệu, biểu đồ, curl)
+    giữ lại bên dưới, có ghi chú rõ. Mình đã chụp lại ảnh trang Issues sau khi
+    sửa.
+  - Privacy Checklist: đã tick các mục bạn xác nhận. Còn đúng 1 mục chưa tick:
+    "CI chưa chạy trên GitHub Actions". Mục này để vậy là đúng sự thật.
+  - AI Audit Report, Disclosure và Mandatory Disclosure:
+    - Hàng bug report và hàng Critique ghi rõ: bạn tự viết hoặc trả lời câu hỏi,
+      AI chỉ diễn đạt lại.
+    - Đã bỏ đoạn "[to be rewritten…]" trong Mandatory Disclosure.
+  - Prompt log: thêm 8 lượt hỏi đáp này.
+
+  Đã commit local (26 commit) và đồng bộ PR #1 (20 commit).
+
+  Còn 3 việc chỉ bạn làm được:
+  1. Ký 4 file .docx trong member5/ai-forms/.
+  2. Xuất lại transcript: gõ /export lần cuối, rồi bảo mình. Mình sẽ đưa file
+     mới vào docs/ai_session_transcript.txt (để transcript có cả các lượt hỏi
+     đáp) và đóng gói zip lần cuối.
+  3. Nhờ chủ repo merge PR #1: https://github.com/KTPM2026/HW5/pull/1
+
+✻ Cooked for 2m 54s · done 4:34 PM

@@ -1,3 +1,42 @@
+commit 23a7324305fb541e31b3124a3bbafca69a08554e
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:37:37 2026 +0700
+
+    P5: chữ ký sinh viên trên biểu mẫu AI, transcript cuối, prompt log đầy đủ
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ ...02] AI Audit Report \342\200\223 23120317.docx" | Bin 33590 -> 33592 bytes
+ ... AI Disclosure Form \342\200\223 23120317.docx" | Bin 27751 -> 27751 bytes
+ ...eflective Statement \342\200\223 23120317.docx" | Bin 28050 -> 28049 bytes
+ ...I Privacy Checklist \342\200\223 23120317.docx" | Bin 26161 -> 26161 bytes
+ docs/07_AI_Audit_Report.md                         |   2 +-
+ docs/09_AI_Disclosure_Form.md                      |   2 +-
+ docs/10_AI_Reflective_Statement.md                 |   2 +-
+ docs/11_AI_Privacy_Checklist.md                    |   2 +-
+ docs/ai_session_transcript.txt                     | 849 +++++++++++++++++++--
+ docs/prompt_log.md                                 |   1 +
+ pdf/23120317_HW05_AI_Audit_Report.pdf              | Bin 165671 -> 165982 bytes
+ pdf/23120317_HW05_AI_Critique.pdf                  | Bin 36833 -> 36833 bytes
+ pdf/23120317_HW05_AI_Disclosure_Form.pdf           | Bin 79025 -> 79333 bytes
+ pdf/23120317_HW05_AI_Privacy_Checklist.pdf         | Bin 75698 -> 76008 bytes
+ pdf/23120317_HW05_AI_Reflective_Statement.pdf      | Bin 63267 -> 63576 bytes
+ pdf/23120317_HW05_Appendix_A_Prompt_Log.pdf        | Bin 112356 -> 114181 bytes
+ pdf/23120317_HW05_Main_Report.pdf                  | Bin 967313 -> 967313 bytes
+ scripts/build_ai_forms.py                          |   4 +-
+ 18 files changed, 807 insertions(+), 55 deletions(-)
+
+commit 777f6c092391319f5fd37a1724e3ffc217d4171d
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:33:53 2026 +0700
+
+    P5: cập nhật git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ git_commit_log.txt | 60 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
+
 commit 768be20c2f97d847a70b828e89935e1774361f3c
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:33:52 2026 +0700

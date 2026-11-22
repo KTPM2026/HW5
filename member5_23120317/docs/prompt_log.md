@@ -28,6 +28,7 @@
 | 19 | 22/11/2026 ~16:36 | API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được truy vấn làm tăng đỗ trễ và kích thước response | (sau khi export) | Giữ nguyên văn làm mô tả Issue #2 (chỉ sửa chính tả) |
 | 20 | 22/11/2026 ~16:38 | Còn nhiều không, đưa ra hết để tôi trả lời một lượt. | (sau khi export) | Liệt kê các câu còn lại |
 | 21 | 22/11/2026 ~16:40 | (Mô tả Issue #3–#7 do sinh viên viết – nguyên văn trong docs/05_GitHub_Issues.md, mục "Mô tả") + "Phần 4 xác nhận có hết cho tôi." | (sau khi export) | Cập nhật nguyên văn mô tả issue #3–#7 lên GitHub; tick Privacy Checklist |
+| 22 | 22/11/2026 ~16:46 | 1. Bạn ký giúp tôi chữ Phát vào, tôi không mở được. Sau đó zip bài nộp cho tôi đi. | (sau khi export) | Điền chữ ký gõ "Phát" vào 4 biểu mẫu theo yêu cầu của sinh viên; xuất transcript cuối; đóng gói zip |
 
 ## Subagent Task 2
 

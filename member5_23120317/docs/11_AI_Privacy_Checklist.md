@@ -40,4 +40,4 @@ Final responsibility for the accuracy, originality, and integrity of this submis
 | Course: | CS423 / CSC13003 – Software Testing |
 | Instructor: | Dr. Lam Quang Vu / Dr. Tran Duy Hoang / MSc. Tran Thi Bich Hanh / MSc. Truong Phuoc Loc / MSc. Ho Tuan Thanh |
 | Date: | 22/11/2026 |
-| Signature: |  |
+| Signature: | Phát |
