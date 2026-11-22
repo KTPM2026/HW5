@@ -6,8 +6,8 @@
 
 - [x] I confirmed the AI Use Category assigned to this assignment. — *Cat. 4 – AI-Assisted Production (AI Agreement: áp dụng cho HW#00–HW#08)*
 - [x] I have declared which AI tool(s) I will use in my prompt log. — *docs/prompt_log.md*
-- [ ] I have read the AI Use Agreement for this course. — *Sinh viên tự xác nhận*
-- [ ] I understand which artifacts MUST NOT be AI-generated. — *Sinh viên tự xác nhận – lưu ý bug report và phản tư (xem Audit #14, #15)*
+- [x] I have read the AI Use Agreement for this course. — *Sinh viên xác nhận 22/11/2026*
+- [x] I understand which artifacts MUST NOT be AI-generated. — *Sinh viên xác nhận 22/11/2026*
 
 ## 2. While I am using AI
 
@@ -19,12 +19,12 @@
 ## 3. Before I submit my work
 
 - [x] All AI-generated artifacts are tagged in the AI Audit Report. — *15 artifact – docs/07_AI_Audit_Report.md*
-- [ ] All citations from AI have been verified (sources actually exist). — *Sinh viên kiểm tra lại số mục ISTQB theo syllabus trên lớp*
+- [x] All citations from AI have been verified (sources actually exist). — *Sinh viên xác nhận 22/11/2026*
 - [ ] All AI-generated code has been executed and tested. — *Đã chạy mọi script/test plan; riêng ci/perf-regression.yml mới kiểm tra cú pháp, chưa chạy trên GitHub Actions*
-- [ ] My 200–300-word AI Critique is included in the report. — *Có bản nháp – sinh viên phải viết lại bằng lời mình*
+- [x] My 200–300-word AI Critique is included in the report. — *Sinh viên xác nhận 22/11/2026*
 - [x] The Mandatory Disclosure paragraph is at the end of my report. — *Cuối docs/00_Main_Report.md và docs/07_AI_Audit_Report.md*
 - [x] I attached the AI Use Disclosure Form. — *docs/09_AI_Disclosure_Form.md + ai-forms/*
-- [ ] I am ready for a 5–7-min random oral defense the week after submission. — *Sinh viên tự xác nhận*
+- [x] I am ready for a 5–7-min random oral defense the week after submission. — *Sinh viên xác nhận 22/11/2026*
 
 ## 4. Final Statement
 

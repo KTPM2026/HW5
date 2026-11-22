@@ -32,6 +32,14 @@ PROMPTS = [  # (thời gian ~, prompt nguyên văn, dòng transcript, việc AI 
     ("22/11/2026 ~16:00", "ok làm đi", 2116, "Task 3, Agent Skill, AI Audit Report, bản nháp AI Critique"),
     ("22/11/2026 ~16:09", "ok tôi xuất rồi, điền hộ cho tôi full điểm trừ Agent skill, sau đó zip và đưa tôi file nộp", None, "Điền tự đánh giá 90, PDF, đóng gói zip"),
     ("22/11/2026 ~16:13", "Xem lại D:\\University\\Testing\\HW05\\AI Templates-20261122T091219Z-1-001.zip, và tuân thủ theo đi. Rà soát bài nộp một lần nữa xem có thiếu gì không.", None, "Đối chiếu 6 template, viết lại Audit Report theo AI-02, thêm Disclosure/Reflective/Privacy, prompt log, ảnh trang Issues"),
+    ("22/11/2026 ~16:25", "hỏi tôi từng câu cho tôi trả lời rồi paraphrase lại đưa vô", None, "Hỏi lần lượt các câu cho Critique / Reflective / bug report / checklist"),
+    ("22/11/2026 ~16:27", "- CPU báo 113% do script giám sát đọc sai. - AI ở Task 2 đưa con số lợi ích (×3–4, +20–40%) không có số đo. - Test plan dùng Groovy nên chạy lỗi trên JDK 25.", None, "Ghi nhận – Critique câu 1"),
+    ("22/11/2026 ~16:29", "(Critique câu 2 – chọn lại 3 nguyên nhân gợi ý) + \"Thêm nữa là AI chỉ lấy số nó nhận được rồi bỏ vào, không có giám sát hay double check\"", None, "Ghi nhận – Critique câu 2"),
+    ("22/11/2026 ~16:31", "Khi làm việc với AI phải có con người giám sát và double check lại các số liệu nó đưa ra, yêu cầu AI check lại toàn bộ khi làm xong.", None, "Diễn đạt lại thành AI Critique 298 từ"),
+    ("22/11/2026 ~16:34", "- Hiểu ra sự khác nhau giữa Load, Stress, Spike và Soak khi nhìn số liệu thật. - Biết cách đọc file .jtl, hoặc biết cách tìm điểm gãy. AI chạy các bài test để hiểu hơn về cách kiểm thử được thực hiện, các bài sau sẽ giữ nguyên tắt review lại output của AI, và hỏi lại AI từ những output nó đưa ra để hiểu bài hơn.", None, "Diễn đạt lại thành Reflective câu 5"),
+    ("22/11/2026 ~16:36", "API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được truy vấn làm tăng đỗ trễ và kích thước response", None, "Giữ nguyên văn làm mô tả Issue #2 (chỉ sửa chính tả)"),
+    ("22/11/2026 ~16:38", "Còn nhiều không, đưa ra hết để tôi trả lời một lượt.", None, "Liệt kê các câu còn lại"),
+    ("22/11/2026 ~16:40", "(Mô tả Issue #3–#7 do sinh viên viết – nguyên văn trong docs/05_GitHub_Issues.md, mục \"Mô tả\") + \"Phần 4 xác nhận có hết cho tôi.\"", None, "Cập nhật nguyên văn mô tả issue #3–#7 lên GitHub; tick Privacy Checklist"),
 ]
 SUBAGENT = ("22/11/2026 ~15:35", "docs/task2/ai_analysis_prompt.md", "docs/task2/ai_analysis_output_raw.md")
 
@@ -109,7 +117,7 @@ DISC = {
         "báo cáo phân tích + đề xuất tối ưu (03), Task 2 (AI phân tích + bản review đầu), Task 3 (06, perf_gate.py, CI mẫu), Agent Skill, biểu đồ, "
         "ảnh 3 report view, cắt ảnh tài nguyên từ video, đăng PR/issue, bản nháp AI Critique. "
         "AI KHÔNG làm: chạy chính thức 3 kịch bản và quay video có thuyết minh (sinh viên), ảnh dxdiag (sinh viên). "
-        "Phải do sinh viên viết lại trước khi nộp: mô tả 6 bug report (#2–#7) và AI Critique."),
+        "Sinh viên tự viết: mô tả 6 bug report (#2–#7). AI Critique và câu 5 Reflective: ý của sinh viên (trả lời câu hỏi), AI chỉ diễn đạt lại."),
     "5. How I reviewed, revised, or verified the AI output:": (
         "Chạy smoke test trước mọi lần chạy thật; đối chiếu mọi số trong báo cáo với .jtl gốc bằng analyze_jtl.py; kiểm tra lockout và các bug bằng curl trên SUT; "
         "kiểm tra pre_run_db.txt/post_run_db.txt (số đơn, user bị khóa); đo lại đề xuất index/LIMIT trên bản sao DB; dùng một AI phiên mới (không ngữ cảnh) để phân tích độc lập rồi đối chiếu; "
@@ -121,24 +129,24 @@ REFL = {
     "2. What did you accept, reject, or revise from AI outputs?": "Chấp nhận: dữ liệu CSV, cổng perf_gate.py, ảnh report view (đã đối chiếu số mẫu). Từ chối/sửa: Groovy → __jexl3; message assertion \"403 = khóa tài khoản\"; tham số Stress (thêm breakpoint) và Soak (150 → 400 VU); format CPU N1 → F1; các số sai trong báo cáo (CPU 113%, 95% lỗi). Từ Task 2 giữ 9 đề xuất feasible, loại khẳng định \"WAL bắt buộc cho cluster\" và 5 hệ số lợi ích không có phép đo.",
     "3. What errors, biases, or limitations did you notice in the AI outputs?": "Không kiểm tra môi trường (JDK 25); ước lượng thấp năng lực SUT; gán sẵn nguyên nhân lỗi trong assertion; đọc sai CSV do định dạng số; trộn kết quả hai phiên chạy khác ngày; tự đặt SLA sau khi xem kết quả; quy nút thắt cho event loop dù số đo theo bước chỉ ra hàng đợi SQLite; đưa hệ số lợi ích (×3–4, +20–40%) không có phép đo; lỗi cú pháp YAML.",
     "4. How did you verify information, sources, or claims provided by AI?": "Chạy trên SUT thật (smoke + 3 lần chính thức có video), đối chiếu với .jtl/console.txt/pre_run_db.txt, kiểm chứng bug bằng curl, đo lại tối ưu trên bản sao DB, so sánh với phân tích của một AI phiên mới, kiểm tra tài liệu SQLite về locking/WAL.",
-    "5. What did you learn through this project that you could not have learned by simply accepting AI output?": "[SINH VIÊN TỰ VIẾT – phần phản tư cá nhân, không giao cho AI.]",
+    "5. What did you learn through this project that you could not have learned by simply accepting AI output?": "Nhìn số liệu thật từ các lần chạy, tôi hiểu rõ sự khác nhau giữa bốn loại kiểm thử: Load cho biết hệ thống ở tải bình thường (50 VU, p95 5 ms), Stress đẩy dần để tìm điểm gãy (bão hòa khoảng 900–950 RPS, gãy ở khoảng 1.100 VU), Spike xem hệ thống chịu và hồi phục sau đột biến, còn Soak cho thấy hệ thống chậm dần theo thời gian dù không có lỗi. Tôi cũng biết cách đọc file .jtl và tìm điểm gãy qua các mốc throughput ngừng tăng và tỉ lệ lỗi tăng vọt. Việc để AI chạy các bài test giúp tôi thấy kiểm thử được thực hiện thế nào trong thực tế. Nguyên tắc tôi giữ cho các bài sau: luôn review lại output của AI, và hỏi ngược lại AI về chính những gì nó đưa ra để hiểu bài sâu hơn. (Ý của sinh viên; Claude Code diễn đạt lại.)",
 }
 PRIV = [  # (mục, trạng thái, ghi chú bằng chứng)
     ("I confirmed the AI Use Category assigned to this assignment.", True, "Cat. 4 – AI-Assisted Production (AI Agreement: áp dụng cho HW#00–HW#08)"),
     ("I have declared which AI tool(s) I will use in my prompt log.", True, "docs/prompt_log.md"),
-    ("I have read the AI Use Agreement for this course.", None, "Sinh viên tự xác nhận"),
-    ("I understand which artifacts MUST NOT be AI-generated.", None, "Sinh viên tự xác nhận – lưu ý bug report và phản tư (xem Audit #14, #15)"),
+    ("I have read the AI Use Agreement for this course.", True, "Sinh viên xác nhận 22/11/2026"),
+    ("I understand which artifacts MUST NOT be AI-generated.", True, "Sinh viên xác nhận 22/11/2026"),
     ("I did not enter personal data of classmates, customers, or patients.", True, "Chỉ dữ liệu giả lập perf5_user_*; tên đăng nhập GitHub công khai của nhóm xuất hiện khi kiểm tra quyền repo"),
     ("I did not paste copyrighted reading materials wholesale into the AI.", True, "AI đọc đề HW05 và repo SUT công khai do giảng viên cung cấp"),
     ("I did not paste proprietary employer or open-source license-restricted code.", True, "Chỉ dùng repo SUT công khai của môn học"),
     ("I logged each prompt + AI response into prompt_log.md with timestamp.", True, "docs/prompt_log.md + docs/ai_session_transcript.txt"),
     ("All AI-generated artifacts are tagged in the AI Audit Report.", True, "15 artifact – docs/07_AI_Audit_Report.md"),
-    ("All citations from AI have been verified (sources actually exist).", None, "Sinh viên kiểm tra lại số mục ISTQB theo syllabus trên lớp"),
+    ("All citations from AI have been verified (sources actually exist).", True, "Sinh viên xác nhận 22/11/2026"),
     ("All AI-generated code has been executed and tested.", False, "Đã chạy mọi script/test plan; riêng ci/perf-regression.yml mới kiểm tra cú pháp, chưa chạy trên GitHub Actions"),
-    ("My 200–300-word AI Critique is included in the report.", None, "Có bản nháp – sinh viên phải viết lại bằng lời mình"),
+    ("My 200–300-word AI Critique is included in the report.", True, "Sinh viên xác nhận 22/11/2026"),
     ("The Mandatory Disclosure paragraph is at the end of my report.", True, "Cuối docs/00_Main_Report.md và docs/07_AI_Audit_Report.md"),
     ("I attached the AI Use Disclosure Form.", True, "docs/09_AI_Disclosure_Form.md + ai-forms/"),
-    ("I am ready for a 5–7-min random oral defense the week after submission.", None, "Sinh viên tự xác nhận"),
+    ("I am ready for a 5–7-min random oral defense the week after submission.", True, "Sinh viên xác nhận 22/11/2026"),
 ]
 PRIV_SECTIONS = [("1. Before I use AI", 0, 4), ("2. While I am using AI", 4, 8), ("3. Before I submit my work", 8, 15)]
 

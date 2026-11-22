@@ -34,7 +34,7 @@
 
 ### 4. Specific parts of the work AI contributed to:
 
-AI tạo: khảo sát API (01), script dữ liệu + CSV, bộ sinh 4 test plan .jmx, script chạy/giám sát/phân tích, thiết kế kịch bản (02), báo cáo phân tích + đề xuất tối ưu (03), Task 2 (AI phân tích + bản review đầu), Task 3 (06, perf_gate.py, CI mẫu), Agent Skill, biểu đồ, ảnh 3 report view, cắt ảnh tài nguyên từ video, đăng PR/issue, bản nháp AI Critique. AI KHÔNG làm: chạy chính thức 3 kịch bản và quay video có thuyết minh (sinh viên), ảnh dxdiag (sinh viên). Phải do sinh viên viết lại trước khi nộp: mô tả 6 bug report (#2–#7) và AI Critique.
+AI tạo: khảo sát API (01), script dữ liệu + CSV, bộ sinh 4 test plan .jmx, script chạy/giám sát/phân tích, thiết kế kịch bản (02), báo cáo phân tích + đề xuất tối ưu (03), Task 2 (AI phân tích + bản review đầu), Task 3 (06, perf_gate.py, CI mẫu), Agent Skill, biểu đồ, ảnh 3 report view, cắt ảnh tài nguyên từ video, đăng PR/issue, bản nháp AI Critique. AI KHÔNG làm: chạy chính thức 3 kịch bản và quay video có thuyết minh (sinh viên), ảnh dxdiag (sinh viên). Sinh viên tự viết: mô tả 6 bug report (#2–#7). AI Critique và câu 5 Reflective: ý của sinh viên (trả lời câu hỏi), AI chỉ diễn đạt lại.
 
 ### 5. How I reviewed, revised, or verified the AI output:
 

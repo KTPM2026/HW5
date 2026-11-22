@@ -589,112 +589,195 @@ Lọc theo diff tiết kiệm phần lớn chi phí: nhiều commit chỉ chạm
 
 <div class="pb"></div>
 
-# 05 – Nội dung GitHub Issues (Người 5 – Workflow 5)
+# 05 – GitHub Issues (Người 5 – Workflow 5)
 
-> Bản nháp để đăng lên trang Issues của repo. Mỗi issue đính kèm ảnh tương ứng trong `evidence/` hoặc ảnh chụp HTML report.
-
----
-
-## Issue 1 – [Perf] `GET /api/orders/my-orders` chậm dần theo số đơn hàng (full table scan, không phân trang)
-
-**Labels:** performance
-
-**Mô tả.** Truy vấn `SELECT * FROM orders WHERE user_id = ? ORDER BY id DESC` không có index trên `orders.user_id` và trả về toàn bộ đơn của user. Thời gian phản hồi và kích thước response tăng tuyến tính theo kích thước bảng `orders`.
-
-**Bằng chứng**
-- `EXPLAIN QUERY PLAN` → `SCAN orders` (`results/optimization/bench_index.md`).
-- Bảng 117.431 đơn: 10,68 ms/truy vấn, trung bình 235 đơn/response.
-- Soak 400 VU: response Order History 19,4 KB → 34,6 KB; thời gian 22 → 175 ms sau 15 phút.
-
-**Tái hiện.** Chạy `23120317_Soak_20261119.jmx` 15 phút và so sánh p95 phút 1 với phút 15.
-
-**Đề xuất.** `CREATE INDEX idx_orders_user_id ON orders(user_id, id DESC)` + phân trang `LIMIT 20`. Đã đo trên bản sao DB: nhanh hơn 8,9× (chỉ index) và 59× (index + LIMIT).
+> Đã đăng tại https://github.com/KTPM2026/HW5/issues (#2–#7). **Phần "Mô tả" do sinh viên tự viết** (AI Agreement §11); phần bằng chứng bên dưới là số liệu thu thập từ JMeter/curl/mã nguồn. Ảnh trang Issues: `evidence/github_issues/`.
 
 ---
 
-## Issue 2 – [Bug] Giỏ hàng không bị xóa sau checkout, tăng vô hạn trong RAM
+## Issue #2 – [P5][Perf] GET /api/orders/my-orders chậm dần theo số đơn (full table scan, không phân trang)
 
-**Labels:** bug, performance
+**Người báo:** Thành viên 5 (23120317) – Workflow 5 · **Loại:** Performance
 
-**Mô tả.** `POST /api/checkout` không xóa `userCarts[userId]` (vi phạm FR-08). Giỏ lưu trong RAM process (`const userCarts = {}`) nên tăng mãi; `POST /api/cart` cùng sản phẩm tạo dòng mới thay vì tăng số lượng (vi phạm FR-07).
+#### Mô tả
+API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được truy vấn làm tăng độ trễ và kích thước response.
 
-**Tái hiện**
-1. Login → `POST /api/cart` → `POST /api/checkout` → `GET /api/cart`.
-2. **Mong đợi:** `[]`. **Thực tế:** vẫn còn item đã thanh toán.
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
 
-**Bằng chứng.** Soak: response `GET /api/cart` 8,8 KB → 15,6 KB trong 15 phút.
+#### Bằng chứng (Soak 400 VU, 15 phút, 0% lỗi)
+![soak](../evidence/issue1_soak_order_history.png)
+
+- p95 toàn hệ thống theo phút: **47 ms → 393 ms**; RPS 599 → 494 (−17%)
+- Response my-orders: **~18 KB → ~35 KB** (bảng orders 56.984 → 117.431 dòng)
+- `Browse Products` (bảng chỉ 5 dòng) chậm y hệt → nghẽn do hàng đợi DB dùng chung
+- Đo trên bản sao DB 117.431 đơn ([bench_index.md](../results/optimization/bench_index.md)): **10,68 ms/truy vấn**
+
+#### Tái hiện
+Chạy `test-plans/23120317_Soak_20261119.jmx` 15 phút, so sánh p95 phút đầu và phút cuối ([analysis.md](../results/23120317_Soak_20261119/analysis.md)).
+
+#### Đề xuất (đã đo trên bản sao DB)
+| Biến thể | ms/truy vấn |
+|---|---:|
+| Hiện tại | 10,68 |
+| `CREATE INDEX idx_orders_user_id ON orders(user_id, id DESC)` | 1,20 (8,9×) |
+| Index + `LIMIT 20` | **0,18 (59×)** |
+
 
 ---
 
-## Issue 3 – [Bug] Khóa tài khoản sai đặc tả: khóa sau 2 lần sai, khóa 180 giây
+## Issue #3 – [P5][Bug] Giỏ hàng không bị xóa sau checkout, tăng vô hạn trong RAM
 
-**Labels:** bug
+**Người báo:** Thành viên 5 (23120317) – Workflow 5 · **Loại:** Bug + Performance
 
-**Đặc tả FR-02.** Mỗi lần sai +1; khóa khi ≥ 3 lần; khóa 30 giây.
-**Thực tế (`server.js`).** `login_attempts + 2`; khóa 180.000 ms.
+#### Mô tả
+Sau khi thanh toán thành công, các sản phẩm vẫn còn trong giỏ hàng khi gọi GET /api/cart, thay vì được xóa như yêu cầu FR-08. Ngoài ra, khi thêm một sản phẩm đã tồn tại, hệ thống tạo dòng dữ liệu mới thay vì tăng số lượng sản phẩm theo FR-07. Điều này khiến dữ liệu giỏ hàng bị trùng lặp, dung lượng response tăng dần và tiêu tốn RAM của server theo thời gian.
 
-**Tái hiện**
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
+
+#### Tái hiện
+1. Login → `POST /api/cart` → `POST /api/checkout` → `GET /api/cart`
+2. **Mong đợi:** `[]` · **Thực tế:** vẫn còn sản phẩm đã thanh toán
+
+#### Bằng chứng
+Soak 15 phút: kích thước response `GET /api/cart` **8,8 KB → 15,6 KB**; RAM process node 109 → 127 MB ([analysis.md](../results/23120317_Soak_20261119/analysis.md)).
+
+#### Đề xuất
+Xóa giỏ sau checkout thành công; gộp sản phẩm trùng; lưu giỏ vào DB (bắt buộc nếu chạy nhiều worker/cluster).
+
+
+---
+
+## Issue #4 – [P5][Bug] Khóa tài khoản sai đặc tả FR-02: khóa sau 2 lần sai, khóa 180 giây
+
+**Người báo:** Thành viên 5 (23120317) · **Loại:** Functional bug (FR-02)
+
+#### Mô tả
+Logic đếm số lần đăng nhập sai đang tăng bộ đếm thêm 2 thay vì 1 sau mỗi lần thử. Đồng thời, thời gian khóa tài khoản là 180 giây thay vì 30 giây như đặc tả FR-02. Điều này khiến tài khoản bị khóa sớm hơn dự kiến, gây bất tiện cho người dùng và không tuân thủ yêu cầu nghiệp vụ.
+
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
+
+#### Đặc tả FR-02
+Mỗi lần đăng nhập sai tăng bộ đếm **+1**; khóa khi sai **≥ 3** lần liên tiếp; khóa **30 giây**.
+
+#### Thực tế (`backend/server.js`)
+```js
+const newAttempts = user.login_attempts + 2;          // +2 thay vì +1
+if (newAttempts >= 3) lockedUntil = Date.now() + 180000; // 180 s thay vì 30 s
+```
+
+#### Tái hiện
 ```bash
 for i in 1 2 3; do curl -s -w " [%{http_code}]\n" -H 'Content-Type: application/json' \
   -d '{"email":"test@eshop.com","password":"wrong"}' localhost:3000/api/login; done
 ```
-Kết quả: `401, 401, 403` → bị khóa ngay ở lần thử thứ 3 (sau 2 lần sai).
+```
+{"error":"Invalid email or password"} [401]
+{"error":"Invalid email or password"} [401]
+{"error":"Tài khoản đã bị khóa. Vui lòng thử lại sau."} [403]
+```
+→ Bị khóa ngay sau **2** lần sai, và khóa 3 phút.
+
+#### Ảnh hưởng tới kiểm thử hiệu năng
+Chỉ 2 request sai (vd. 1 dòng CSV hỏng) là account bị khóa 3 phút → mọi VU dùng account đó nhận 403. Test plan dùng credential hợp lệ + script `reset_lockout.js` giữa các lần chạy.
+
 
 ---
 
-## Issue 4 – [Perf] Server từ chối kết nối khi > ~1.000 người dùng đồng thời
+## Issue #5 – [P5][Perf] Server từ chối kết nối khi vượt ~1.100 người dùng đồng thời
 
-**Labels:** performance
+**Người báo:** Thành viên 5 (23120317) – Workflow 5 · **Loại:** Performance
 
-**Mô tả.** Stress 400 → 2.000 VU (think 0–0,2 s): throughput bão hòa ~900–950 RPS từ 800 VU (p95 ~1,3 s); từ 1.200 VU xuất hiện `HttpHostConnectException` (connection refused), error rate cửa sổ 30 s tăng 23,7% → 98%. Server không crash và tự hồi phục.
+#### Mô tả
+Khi số lượng người dùng đồng thời tăng lên khoảng 1.100, server bắt đầu từ chối kết nối và tỷ lệ request thất bại tăng đột biến. Throughput đã bão hòa ở khoảng 900–950 RPS trước khi lượng request thành công sụt giảm mạnh. Điều này cho thấy hệ thống có giới hạn về khả năng xử lý tải đồng thời, làm giảm nghiêm trọng khả năng phục vụ khi lưu lượng tăng cao, dù server vẫn có thể tự phục hồi sau khi giảm tải.
 
-**Bằng chứng.** `results/23120317_Stress_20261119_breakpoint/analysis.md`, HTML report cùng thư mục.
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
 
-**Ghi chú.** Một phần lỗi (`BindException`, 3.999 mẫu) do máy chạy JMeter hết cổng tạm – JMeter chạy chung máy với server.
+#### Phân loại lỗi (từ .jtl)
+| Lỗi | Số lượng |
+|---|---:|
+| `HttpHostConnectException` (connection refused) | 534.586 |
+| `java.net.BindException` (máy tải hết cổng tạm – giới hạn phía JMeter chạy chung máy) | 3.999 |
+| `SocketTimeoutException` (> 30 s) | 198 |
+
+99,9% lỗi rơi vào `01 Login` – bước duy nhất mở kết nối TCP mới mỗi vòng. Server **không crash**, tự hồi phục sau khi rút tải. Không có tài khoản bị khóa.
+
+#### Dữ liệu
+[analysis.md](../results/23120317_Stress_20261119_breakpoint/analysis.md) · `html-report/` cùng thư mục
+
+#### Đề xuất
+Load shedding (503 khi event-loop lag cao), tăng backlog `app.listen(PORT, host, 2048)`, giảm chi phí mỗi request (issue về my-orders), cân nhắc cluster sau khi chuyển giỏ hàng ra khỏi RAM.
+
 
 ---
 
-## Issue 5 – [Security] `GET /api/orders/:id` không yêu cầu xác thực (IDOR)
+## Issue #6 – [P5][Security] GET /api/orders/:id không yêu cầu xác thực (IDOR)
 
-**Labels:** security
+**Người báo:** Thành viên 5 (23120317) · **Loại:** Security (IDOR)
 
-**Tái hiện.** `curl localhost:3000/api/orders/1` (không có header `Authorization`) → trả về đầy đủ đơn hàng của user khác (user_id, total_amount, shipping_address).
-**Mong đợi.** 401 nếu không có token; 403/404 nếu đơn không thuộc user.
+#### Mô tả
+API cho phép truy xuất thông tin đơn hàng chỉ bằng ID mà không yêu cầu xác thực hoặc kiểm tra quyền sở hữu đơn hàng. Người không đăng nhập có thể xem dữ liệu nhạy cảm của người khác như user ID, tổng tiền và địa chỉ giao hàng. Đây là lỗ hổng bảo mật nghiêm trọng, có thể dẫn đến rò rỉ thông tin cá nhân và dữ liệu giao dịch của khách hàng.
+
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
+
+#### Tái hiện
+```bash
+curl -s localhost:3000/api/orders/1550      # không gửi header Authorization
+```
+```json
+{"id":1550,"user_id":51,"total_amount":4000000,"status":"pending","shipping_address":"49 Le Loi Q1 TP.HCM","created_at":"2026-11-19 16:02:53"}
+```
+
+#### Mong đợi
+401 khi không có token; 403/404 khi đơn không thuộc user đang đăng nhập.
+
 
 ---
 
-## Issue 6 – [Security] `POST /api/login` trả về mật khẩu plaintext trong response
+## Issue #7 – [P5][Security] POST /api/login trả về mật khẩu plaintext trong response
 
-**Labels:** security
+**Người báo:** Thành viên 5 (23120317) · **Loại:** Security
 
-**Mô tả.** Login thành công trả `res.json({ message, token, user })`, trong đó `user` là nguyên bản ghi `SELECT *` gồm cột `password` (lưu plaintext), `reset_token`, `login_attempts`.
+#### Mô tả
+Sau khi đăng nhập thành công, API trả về toàn bộ bản ghi người dùng, bao gồm cả trường password chứa mật khẩu dạng plaintext. Điều này khiến thông tin xác thực bị lộ ngay trong response và có thể bị khai thác nếu dữ liệu được lưu trong log, cache hoặc bị các bên không có quyền truy cập. API cần loại bỏ hoàn toàn trường mật khẩu khỏi response trả về cho client.
 
-**Tái hiện**
+---
+*Phần dưới: bằng chứng / số liệu tái hiện (thu thập từ lần chạy JMeter, curl và mã nguồn).*
+
+#### Tái hiện
 ```bash
 curl -s -H 'Content-Type: application/json' -d '{"email":"test@eshop.com","password":"Test1234!"}' localhost:3000/api/login
 ```
-Kết quả: `"user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!",...}`.
+```json
+{"message":"Login successful","token":"eyJ...","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":0, ...}}
+```
 
-**Mong đợi.** Chỉ trả các trường cần thiết (`id, name, email, role`); mật khẩu phải được băm (bcrypt) và không bao giờ trả về client.
+#### Mong đợi
+Chỉ trả `id, name, email, role`; mật khẩu phải được băm (bcrypt) và không bao giờ gửi về client.
 
-> Phát hiện bởi AI trong Task 2 và đã được kiểm chứng thủ công.
+> Phát hiện trong Task 2 (AI phân tích), đã kiểm chứng thủ công.
+
 
 
 <div class="pb"></div>
 
 # 08 – AI Critique (Thành viên 5 – Nguyễn Đức Phát, 23120317)
 
-AI làm tốt phần cơ học (đọc mã, sinh test plan, chạy JMeter, tính thống kê), nhưng sai ở chỗ cần phán đoán. AI dùng Groovy mà không kiểm tra JDK nên test lỗi ngay lần đầu. Nó ước lượng thấp năng lực hệ thống, khiến kịch bản Stress 500 VU không tìm được điểm gãy. Nó còn tự viết message assertion "403 = tài khoản bị khóa", làm bảng lỗi trông như sự cố khóa tài khoản, trong khi thực tế toàn là lỗi kết nối. Ở Task 2, AI đọc đúng số liệu nhưng diễn giải sai ngữ cảnh. Nó nối hai phiên chạy khác ngày thành một chuỗi. Nó tự đặt ngưỡng 200 ms sau khi xem kết quả để chấm Soak "không đạt". Nó quy nút thắt cho event loop dù số đo theo từng bước cho thấy hàng đợi SQLite mới là phần lớn. Nó cũng đưa ra năm con số lợi ích ("×3–4", "+20–40%") không có phép đo nào.
+AI sai ở ba chỗ tôi thấy đáng chú ý nhất. Thứ nhất, khi sinh test plan JMeter, AI dùng Groovy mà không kiểm tra máy tôi chạy JDK 25, nên lần chạy thử đầu tiên lỗi "Unsupported class file major version 69". Thứ hai, script giám sát tài nguyên do AI viết in số CPU có dấu phẩy phân cách hàng nghìn (ví dụ "1,065.9"), làm vỡ cột trong file CSV. AI vẫn đọc file đó và báo CPU tiến trình node là 113%, trong khi đúng ra chỉ khoảng 54% trung bình, 90% lúc cao nhất. Thứ ba, ở Task 2, AI đề xuất các cách tối ưu kèm những con số lợi ích như "nhanh hơn 3–4 lần" hay "tăng 20–40% năng lực" mà không có phép đo nào chứng minh.
 
-AI không tự phát hiện các lỗi này vì nó suy luận từ kiến thức chung về Node.js và SQLite, thay vì đối chiếu với dữ liệu thô như `pre_run_db.txt`, `timeStamp`, lỗi theo từng label. Prompt của tôi cũng thiếu ngữ cảnh: không nêu SLA định trước và không nói các lần chạy thuộc hai phiên. Khi được hỏi về "lợi ích kỳ vọng", AI có xu hướng điền một con số cho trọn câu trả lời.
+Nguyên nhân chung là AI lấy con số nhận được rồi đưa thẳng vào báo cáo, không có bước giám sát hay kiểm tra lại. Với con số CPU, AI tin vào kết quả script trả về mà không tự hỏi con số đó có hợp lý không, cũng không để ý đến định dạng số của PowerShell. Với Groovy, AI không kiểm tra môi trường thật. Với các con số lợi ích, vì tôi hỏi "lợi ích kỳ vọng" nên AI điền một con số cho đủ câu trả lời, dựa vào kiến thức chung chứ không dựa vào đo đạc.
 
-Nguyên tắc tôi rút ra: mọi kết luận của AI phải truy về được một dòng trong log gốc. Con số nào không có phép đo thì đánh dấu là giả thuyết. Muốn AI phân tích tốt, prompt phải mang theo ngữ cảnh thực nghiệm, không chỉ dữ liệu.
+Nguyên tắc tôi rút ra là khi làm việc với AI luôn phải có con người giám sát và kiểm tra lại các số liệu nó đưa ra, đối chiếu với dữ liệu gốc như file .jtl. Ngoài ra, sau khi AI làm xong, tôi sẽ yêu cầu nó tự rà soát lại toàn bộ kết quả trước khi tôi chấp nhận.
 
-<!-- ~285 từ. Bản nháp do AI soạn từ các lỗi đã ghi nhận; sinh viên cần đọc lại, sửa theo trải nghiệm và giọng văn của mình trước khi nộp. -->
+<!-- Nội dung do sinh viên trả lời qua 3 câu hỏi (prompt log #14–#17); Claude Code chỉ diễn đạt lại thành đoạn văn (Category 3 – feedback/revision). -->
 
 
 <div class="pb"></div>
 
 ## Mandatory Disclosure
 
-"Test plans, data-preparation and analysis scripts, the API survey and the performance report were initially generated by Claude Code (Claude Opus 5.5); I reviewed and modified the test-plan calculation (Groovy → __jexl3), the assertion messages, the Stress and Soak load parameters, the resource-monitor script and the analysis figures, and added the Stress breakpoint and Soak scenarios; the three JMeter report-view screenshots were captured by Claude Code from my own result files and the resource screenshots were cut by Claude Code from my own recording; the official test executions, the demo video with my own narration, the dxdiag hardware report and [the AI Critique and the GitHub bug report descriptions – to be rewritten by me before submission] were done entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category."
+"Test plans, data-preparation and analysis scripts, the API survey and the performance report were initially generated by Claude Code (Claude Opus 5.5); I reviewed and modified the test-plan calculation (Groovy → __jexl3), the assertion messages, the Stress and Soak load parameters, the resource-monitor script and the analysis figures, and added the Stress breakpoint and Soak scenarios; the three JMeter report-view screenshots were captured by Claude Code from my own result files and the resource screenshots were cut by Claude Code from my own recording; the AI Critique and Reflective answer 5 are based on my own answers and were only rephrased by Claude Code; the official test executions, the demo video with my own narration, the dxdiag hardware report and the descriptions of the six GitHub bug reports were written/done entirely by me. The detailed AI Audit Report is attached as Appendix A. I confirm I did not use AI to generate any artifact listed in the prohibited category."

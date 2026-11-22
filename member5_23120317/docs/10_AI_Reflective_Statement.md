@@ -33,7 +33,7 @@ Chạy trên SUT thật (smoke + 3 lần chính thức có video), đối chiế
 
 ### 5. What did you learn through this project that you could not have learned by simply accepting AI output?
 
-[SINH VIÊN TỰ VIẾT – phần phản tư cá nhân, không giao cho AI.]
+Nhìn số liệu thật từ các lần chạy, tôi hiểu rõ sự khác nhau giữa bốn loại kiểm thử: Load cho biết hệ thống ở tải bình thường (50 VU, p95 5 ms), Stress đẩy dần để tìm điểm gãy (bão hòa khoảng 900–950 RPS, gãy ở khoảng 1.100 VU), Spike xem hệ thống chịu và hồi phục sau đột biến, còn Soak cho thấy hệ thống chậm dần theo thời gian dù không có lỗi. Tôi cũng biết cách đọc file .jtl và tìm điểm gãy qua các mốc throughput ngừng tăng và tỉ lệ lỗi tăng vọt. Việc để AI chạy các bài test giúp tôi thấy kiểm thử được thực hiện thế nào trong thực tế. Nguyên tắc tôi giữ cho các bài sau: luôn review lại output của AI, và hỏi ngược lại AI về chính những gì nó đưa ra để hiểu bài sâu hơn. (Ý của sinh viên; Claude Code diễn đạt lại.)
 
 ## 3. AI Categories Used
 

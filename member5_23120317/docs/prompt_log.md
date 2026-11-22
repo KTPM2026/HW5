@@ -20,6 +20,14 @@
 | 11 | 22/11/2026 ~16:00 | ok làm đi | 2116 | Task 3, Agent Skill, AI Audit Report, bản nháp AI Critique |
 | 12 | 22/11/2026 ~16:09 | ok tôi xuất rồi, điền hộ cho tôi full điểm trừ Agent skill, sau đó zip và đưa tôi file nộp | (sau khi export) | Điền tự đánh giá 90, PDF, đóng gói zip |
 | 13 | 22/11/2026 ~16:13 | Xem lại D:\University\Testing\HW05\AI Templates-20261122T091219Z-1-001.zip, và tuân thủ theo đi. Rà soát bài nộp một lần nữa xem có thiếu gì không. | (sau khi export) | Đối chiếu 6 template, viết lại Audit Report theo AI-02, thêm Disclosure/Reflective/Privacy, prompt log, ảnh trang Issues |
+| 14 | 22/11/2026 ~16:25 | hỏi tôi từng câu cho tôi trả lời rồi paraphrase lại đưa vô | (sau khi export) | Hỏi lần lượt các câu cho Critique / Reflective / bug report / checklist |
+| 15 | 22/11/2026 ~16:27 | - CPU báo 113% do script giám sát đọc sai. - AI ở Task 2 đưa con số lợi ích (×3–4, +20–40%) không có số đo. - Test plan dùng Groovy nên chạy lỗi trên JDK 25. | (sau khi export) | Ghi nhận – Critique câu 1 |
+| 16 | 22/11/2026 ~16:29 | (Critique câu 2 – chọn lại 3 nguyên nhân gợi ý) + "Thêm nữa là AI chỉ lấy số nó nhận được rồi bỏ vào, không có giám sát hay double check" | (sau khi export) | Ghi nhận – Critique câu 2 |
+| 17 | 22/11/2026 ~16:31 | Khi làm việc với AI phải có con người giám sát và double check lại các số liệu nó đưa ra, yêu cầu AI check lại toàn bộ khi làm xong. | (sau khi export) | Diễn đạt lại thành AI Critique 298 từ |
+| 18 | 22/11/2026 ~16:34 | - Hiểu ra sự khác nhau giữa Load, Stress, Spike và Soak khi nhìn số liệu thật. - Biết cách đọc file .jtl, hoặc biết cách tìm điểm gãy. AI chạy các bài test để hiểu hơn về cách kiểm thử được thực hiện, các bài sau sẽ giữ nguyên tắt review lại output của AI, và hỏi lại AI từ những output nó đưa ra để hiểu bài hơn. | (sau khi export) | Diễn đạt lại thành Reflective câu 5 |
+| 19 | 22/11/2026 ~16:36 | API này trả về toàn bộ đơn, trong khi chỉ cần một số ít đơn, không có phân trang. Toàn bộ đơn được truy vấn làm tăng đỗ trễ và kích thước response | (sau khi export) | Giữ nguyên văn làm mô tả Issue #2 (chỉ sửa chính tả) |
+| 20 | 22/11/2026 ~16:38 | Còn nhiều không, đưa ra hết để tôi trả lời một lượt. | (sau khi export) | Liệt kê các câu còn lại |
+| 21 | 22/11/2026 ~16:40 | (Mô tả Issue #3–#7 do sinh viên viết – nguyên văn trong docs/05_GitHub_Issues.md, mục "Mô tả") + "Phần 4 xác nhận có hết cho tôi." | (sau khi export) | Cập nhật nguyên văn mô tả issue #3–#7 lên GitHub; tick Privacy Checklist |
 
 ## Subagent Task 2
 
