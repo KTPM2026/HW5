@@ -1,3 +1,52 @@
+commit 0fb5a603d7fa886f0ceb3371d157cd1eff79e5e7
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:19:20 2026 +0700
+
+    P5: tuân thủ AI Templates – Audit Report theo mẫu AI-02, Disclosure (AI-03), Reflective (AI-04), Privacy (AI-05), prompt log, Mandatory Disclosure, ảnh trang Issues
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ README.md                                          |  16 +-
+ ...02] AI Audit Report \342\200\223 23120317.docx" | Bin 0 -> 33413 bytes
+ ... AI Disclosure Form \342\200\223 23120317.docx" | Bin 0 -> 27707 bytes
+ ...eflective Statement \342\200\223 23120317.docx" | Bin 0 -> 27632 bytes
+ ...I Privacy Checklist \342\200\223 23120317.docx" | Bin 0 -> 26285 bytes
+ docs/00_Main_Report.md                             |  22 +-
+ docs/07_AI_Audit_Report.md                         | 132 +++++----
+ docs/09_AI_Disclosure_Form.md                      |  61 ++++
+ docs/10_AI_Reflective_Statement.md                 |  60 ++++
+ docs/11_AI_Privacy_Checklist.md                    |  43 +++
+ docs/prompt_log.md                                 |  28 ++
+ evidence/github_issues/issue_2.png                 | Bin 0 -> 188623 bytes
+ evidence/github_issues/issue_3.png                 | Bin 0 -> 117583 bytes
+ evidence/github_issues/issue_4.png                 | Bin 0 -> 128880 bytes
+ evidence/github_issues/issue_5.png                 | Bin 0 -> 172412 bytes
+ evidence/github_issues/issue_6.png                 | Bin 0 -> 102070 bytes
+ evidence/github_issues/issue_7.png                 | Bin 0 -> 111396 bytes
+ evidence/github_issues/issues_list.png             | Bin 0 -> 104087 bytes
+ pdf/23120317_HW05_AI_Audit_Report.pdf              | Bin 138226 -> 165247 bytes
+ pdf/23120317_HW05_AI_Critique.pdf                  | Bin 48344 -> 48344 bytes
+ pdf/23120317_HW05_AI_Disclosure_Form.pdf           | Bin 0 -> 78825 bytes
+ pdf/23120317_HW05_AI_Privacy_Checklist.pdf         | Bin 0 -> 76266 bytes
+ pdf/23120317_HW05_AI_Reflective_Statement.pdf      | Bin 0 -> 62791 bytes
+ pdf/23120317_HW05_Appendix_A_Prompt_Log.pdf        | Bin 0 -> 97016 bytes
+ pdf/23120317_HW05_Main_Report.pdf                  | Bin 866336 -> 878444 bytes
+ scripts/ai_forms_data.py                           | 179 ++++++++++++
+ scripts/build_ai_forms.py                          | 317 +++++++++++++++++++++
+ scripts/build_pdf.py                               |  19 +-
+ 28 files changed, 817 insertions(+), 60 deletions(-)
+
+commit 2bfb069e1b477d6229c02c6db3de3bd3ef1f7a10
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:11:04 2026 +0700
+
+    P5: cập nhật git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ git_commit_log.txt | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
 commit ef476dcdbb446f3499e513b567a0f96e6cca2683
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:11:03 2026 +0700

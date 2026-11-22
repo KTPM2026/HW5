@@ -25,7 +25,7 @@ code{background:#f3f4f6;padding:0 3px;border-radius:3px;font-size:9pt}
 pre{background:#f3f4f6;padding:8px;border-radius:4px;white-space:pre-wrap;font-size:8.5pt}
 pre code{background:none;padding:0}
 blockquote{border-left:3px solid #93c5fd;margin:8px 0;padding:2px 10px;color:#374151;background:#f8fafc}
-img{max-width:100%}.pb{page-break-before:always}
+img{max-width:100%}td br{line-height:1.6}.pb{page-break-before:always}
 @page{size:A4;margin:16mm 14mm}
 """
 
@@ -58,13 +58,24 @@ def main():
     for i, p in enumerate(MAIN_PARTS):
         txt = (ROOT / p).read_text(encoding="utf-8")
         parts.append(("" if i == 0 else '\n\n<div class="pb"></div>\n\n') + txt)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from ai_forms_data import DISCLOSURE
+    if "## Mandatory Disclosure" in parts[0]:  # README đã có đoạn này -> bỏ khỏi phần đầu, đặt ở cuối báo cáo
+        parts[0] = parts[0].split("## Mandatory Disclosure")[0]
     main_md = ("# HW05 – Performance Testing – Báo cáo chính (Thành viên 5 – 23120317)\n\n"
-               "> File ghép tự động từ README và các tài liệu trong `docs/` bằng `scripts/build_pdf.py`.\n\n"
-               + "".join(parts))
+               "> File ghép tự động từ README và các tài liệu trong `docs/` bằng `scripts/build_pdf.py`. "
+               "Phụ lục AI: Appendix A `docs/prompt_log.md`, AI Audit Report, Disclosure Form, Reflective Statement, "
+               "Privacy Checklist (`pdf/`, `ai-forms/`).\n\n"
+               + "".join(parts)
+               + '\n\n<div class="pb"></div>\n\n## Mandatory Disclosure\n\n"' + DISCLOSURE + '"\n')
     (ROOT / "docs/00_Main_Report.md").write_text(main_md, encoding="utf-8")
     pdf(to_html(main_md, "23120317 HW05 Main Report"), ROOT / "pdf/23120317_HW05_Main_Report.pdf")
     for src, name in [("docs/08_AI_Critique.md", "23120317_HW05_AI_Critique.pdf"),
-                      ("docs/07_AI_Audit_Report.md", "23120317_HW05_AI_Audit_Report.pdf")]:
+                      ("docs/07_AI_Audit_Report.md", "23120317_HW05_AI_Audit_Report.pdf"),
+                      ("docs/09_AI_Disclosure_Form.md", "23120317_HW05_AI_Disclosure_Form.pdf"),
+                      ("docs/10_AI_Reflective_Statement.md", "23120317_HW05_AI_Reflective_Statement.pdf"),
+                      ("docs/11_AI_Privacy_Checklist.md", "23120317_HW05_AI_Privacy_Checklist.pdf"),
+                      ("docs/prompt_log.md", "23120317_HW05_Appendix_A_Prompt_Log.pdf")]:
         pdf(to_html((ROOT / src).read_text(encoding="utf-8"), name), ROOT / "pdf" / name)
 
 
