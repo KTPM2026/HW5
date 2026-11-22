@@ -3,3 +3,4 @@ results/23120317_Soak_20261119/*.jtl
 results/23120317_Stress_20261119_breakpoint/*.jtl
 results/**/jmeter.log
 *.mp4
+test-plans/report-view/
