@@ -1,3 +1,51 @@
+commit 0896ab5438fdfd249a8dc058d607c499ddc34aaa
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:44:48 2026 +0700
+
+    P5: tự đánh giá 95 (Agent Skill 5/10)
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ README.md                                     |   6 +++---
+ docs/00_Main_Report.md                        |   6 +++---
+ pdf/23120317_HW05_AI_Audit_Report.pdf         | Bin 165982 -> 165982 bytes
+ pdf/23120317_HW05_AI_Critique.pdf             | Bin 36833 -> 36833 bytes
+ pdf/23120317_HW05_AI_Disclosure_Form.pdf      | Bin 79333 -> 79333 bytes
+ pdf/23120317_HW05_AI_Privacy_Checklist.pdf    | Bin 76008 -> 76008 bytes
+ pdf/23120317_HW05_AI_Reflective_Statement.pdf | Bin 63576 -> 63576 bytes
+ pdf/23120317_HW05_Appendix_A_Prompt_Log.pdf   | Bin 114181 -> 114181 bytes
+ pdf/23120317_HW05_Main_Report.pdf             | Bin 972482 -> 975853 bytes
+ 9 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 4d123daa2dd7eadf93daca1e2f2cb72be7bcef79
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:43:18 2026 +0700
+
+    P5: build lại báo cáo chính
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ docs/00_Main_Report.md                        |   5 ++++-
+ pdf/23120317_HW05_AI_Audit_Report.pdf         | Bin 165982 -> 165982 bytes
+ pdf/23120317_HW05_AI_Critique.pdf             | Bin 36833 -> 36833 bytes
+ pdf/23120317_HW05_AI_Disclosure_Form.pdf      | Bin 79333 -> 79333 bytes
+ pdf/23120317_HW05_AI_Privacy_Checklist.pdf    | Bin 76008 -> 76008 bytes
+ pdf/23120317_HW05_AI_Reflective_Statement.pdf | Bin 63576 -> 63576 bytes
+ pdf/23120317_HW05_Appendix_A_Prompt_Log.pdf   | Bin 114181 -> 114181 bytes
+ pdf/23120317_HW05_Main_Report.pdf             | Bin 967313 -> 972482 bytes
+ 8 files changed, 4 insertions(+), 1 deletion(-)
+
+commit 9ffa26f646153f653e3384a1dfec9467b5c92c1e
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:43:12 2026 +0700
+
+    P5: cập nhật git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ git_commit_log.txt | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
 commit b8b9c88cccf1ca6c069d0139d19bb3c7c639d060
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:43:11 2026 +0700

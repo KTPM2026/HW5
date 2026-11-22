@@ -54,7 +54,7 @@
 
 ## Self-assessment
 
-> Agent Skill: đã có `skill/perf-testing-workflow/SKILL.md` nhưng chưa có video demo dùng skill trên một nhóm endpoint hoàn chỉnh như đề yêu cầu → tự chấm 0.
+> Agent Skill: đã có `skill/perf-testing-workflow/SKILL.md` (quy trình 6 bước, dùng lại các script `prepare_data`, `gen_testplans`, `run_scenario`, `analyze_jtl`, `perf_gate`, kèm checklist bẫy diễn giải) nhưng chưa có video demo dùng skill trên một nhóm endpoint hoàn chỉnh như đề yêu cầu → tự chấm 5/10.
 
 | No. | Criteria | Grade | Self-assessed |
 |---|---|---:|---:|
@@ -63,8 +63,8 @@
 | 3 | Task 1 – Spike testing | 20 | 20 |
 | 4 | Task 2 – AI analysis + misinterpretation hunt | 10 | 10 |
 | 5 | Task 3 – Continuous Performance Testing proposal | 10 | 10 |
-| 6 | Agent Skills | 10 | 0 |
-| | **Total** | **100** | **90** |
+| 6 | Agent Skills | 10 | 5 |
+| | **Total** | **100** | **95** |
 
 ## Mandatory Disclosure
 
