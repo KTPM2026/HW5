@@ -69,3 +69,21 @@ Kết quả: `401, 401, 403` → bị khóa ngay ở lần thử thứ 3 (sau 2 
 
 **Tái hiện.** `curl localhost:3000/api/orders/1` (không có header `Authorization`) → trả về đầy đủ đơn hàng của user khác (user_id, total_amount, shipping_address).
 **Mong đợi.** 401 nếu không có token; 403/404 nếu đơn không thuộc user.
+
+---
+
+## Issue 6 – [Security] `POST /api/login` trả về mật khẩu plaintext trong response
+
+**Labels:** security
+
+**Mô tả.** Login thành công trả `res.json({ message, token, user })`, trong đó `user` là nguyên bản ghi `SELECT *` gồm cột `password` (lưu plaintext), `reset_token`, `login_attempts`.
+
+**Tái hiện**
+```bash
+curl -s -H 'Content-Type: application/json' -d '{"email":"test@eshop.com","password":"Test1234!"}' localhost:3000/api/login
+```
+Kết quả: `"user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!",...}`.
+
+**Mong đợi.** Chỉ trả các trường cần thiết (`id, name, email, role`); mật khẩu phải được băm (bcrypt) và không bao giờ trả về client.
+
+> Phát hiện bởi AI trong Task 2 và đã được kiểm chứng thủ công.
