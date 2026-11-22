@@ -58,7 +58,7 @@ Gửi cho Claude các file `results/*/analysis.md` mới (hoặc tự chạy `py
 ## Checklist
 
 - [ ] Ảnh dxdiag + `dxdiag.txt`
-- [ ] Link video YouTube (Unlisted)
+- [x] Link video YouTube (Unlisted): https://youtu.be/Y2VKcs27d3Y
 - [ ] 3 ảnh terminal + Task Manager (Load / Stress / Spike)
 - [ ] 3 ảnh report view (Summary / Aggregate / View Results Tree)
 - [ ] `results/` có `.jtl` + `html-report/` mỗi kịch bản
