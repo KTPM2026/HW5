@@ -1,3 +1,27 @@
+commit b8b9c88cccf1ca6c069d0139d19bb3c7c639d060
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:43:11 2026 +0700
+
+    P5: nén xz 2 file .jtl lớn (breakpoint, soak) để đưa lên GitHub và vừa giới hạn Moodle
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ README.md                                             |   5 ++++-
+ .../23120317_Soak_20261119.jtl.xz                     | Bin 0 -> 4034160 bytes
+ .../23120317_Stress_20261119.jtl.xz                   | Bin 0 -> 6001288 bytes
+ 3 files changed, 4 insertions(+), 1 deletion(-)
+
+commit 694a8990d4fb6fc1954d7bfd100d6c196558ade2
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:37:38 2026 +0700
+
+    P5: cập nhật git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ git_commit_log.txt | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+
 commit 23a7324305fb541e31b3124a3bbafca69a08554e
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:37:37 2026 +0700

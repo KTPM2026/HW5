@@ -51,7 +51,10 @@
 | `evidence/` | dxdiag, ảnh tool + Task Manager, ảnh 3 report view, `github_issues/` (ảnh trang Issues), biểu đồ issue |
 | `scripts/` | Sinh test plan, chuẩn bị dữ liệu, reset lockout, chạy, phân tích, đo index, cổng hồi quy `perf_gate.py`, vẽ biểu đồ |
 
-> Hai file `.jtl` > 50 MB (Soak, Stress breakpoint) không đưa lên GitHub. Chúng được nén nộp kèm trên Moodle.
+> **Log `.jtl` lớn:** hai lần chạy khảo sát được nén `xz` (giải nén bằng 7-Zip, hoặc `xz -d`; đã kiểm tra giải nén ra đúng file gốc):
+> - Stress breakpoint: `results/23120317_Stress_20261119_breakpoint/23120317_Stress_20261119.jtl.xz` (251 MB → 6 MB) – có trong file nộp Moodle và GitHub.
+> - Soak: `results/23120317_Soak_20261119/23120317_Soak_20261119.jtl.xz` (68 MB → 4 MB) – **chỉ trên GitHub** do giới hạn 20 MB của Moodle: https://github.com/hcmus-phat/HW5/tree/member5-23120317/member5_23120317/results/23120317_Soak_20261119
+> - 3 `.jtl` của lần chạy chính thức (Load / Stress / Spike) để nguyên, không nén. `jmeter.log` (log nội bộ JMeter) không đưa vào.
 
 ## Self-assessment
 
