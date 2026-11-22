@@ -27,12 +27,17 @@
 | `docs/02_Test_Design.md` | Thiết kế 3 kịch bản, tham số, SLA, xử lý lockout |
 | `docs/03_Results_Analysis.md` | Kết quả, nguyên nhân gốc, đề xuất tối ưu (đã kiểm chứng) |
 | `docs/task2/` | Task 2: prompt, output AI nguyên văn, review diễn giải sai |
-| `docs/05_GitHub_Issues.md` | Nội dung 6 issue |
+| `docs/05_GitHub_Issues.md` | Nội dung 6 issue ([GitHub Issues #2–#7](https://github.com/KTPM2026/HW5/issues)) |
+| `docs/06_Task3_Continuous_Performance_Testing.md` | Task 3: lưu đồ, cổng hồi quy p95, đánh đổi chi phí / báo động giả |
+| `ci/` | `perf-regression.yml` (GitHub Actions mẫu), `baseline.json` |
+| `skill/perf-testing-workflow/SKILL.md` | Agent Skill tái sử dụng quy trình cho nhóm endpoint khác |
+| `docs/07_AI_Audit_Report.md` | AI Audit Report |
+| `docs/08_AI_Critique.md` | AI Critique (200–300 từ) |
 | `test-plans/` | `23120317_{Load,Stress,Spike,Soak}_20261119.jmx` |
 | `data/` | `users.csv`, `products.csv` |
 | `results/<plan>/` | `.jtl`, `html-report/`, `node_resource.csv`, `analysis.md` |
 | `evidence/` | dxdiag, ảnh tool + Task Manager, ảnh 3 report view |
-| `scripts/` | Sinh test plan, chuẩn bị dữ liệu, reset lockout, chạy, phân tích, đo index |
+| `scripts/` | Sinh test plan, chuẩn bị dữ liệu, reset lockout, chạy, phân tích, đo index, cổng hồi quy `perf_gate.py`, vẽ biểu đồ |
 
 > Hai file `.jtl` > 50 MB (Soak, Stress breakpoint) không đưa lên GitHub. Chúng được nén nộp kèm trên Moodle.
 

@@ -1,0 +1,45 @@
+{
+  "source": "results/23120317_Load_20261119/23120317_Load_20261119.jtl",
+  "labels": {
+    "01 Login": {
+      "n": 1053,
+      "p95": 4,
+      "err_pct": 0.0
+    },
+    "02 View Order History": {
+      "n": 1046,
+      "p95": 3,
+      "err_pct": 0.0
+    },
+    "03 Browse Products": {
+      "n": 1043,
+      "p95": 2,
+      "err_pct": 0.0
+    },
+    "04 Search Products": {
+      "n": 1041,
+      "p95": 2,
+      "err_pct": 0.0
+    },
+    "05 Product Detail": {
+      "n": 1036,
+      "p95": 2,
+      "err_pct": 0.0
+    },
+    "06 Add to Cart": {
+      "n": 1024,
+      "p95": 2,
+      "err_pct": 0.0
+    },
+    "07 View Cart": {
+      "n": 1015,
+      "p95": 2,
+      "err_pct": 0.0
+    },
+    "08 Checkout": {
+      "n": 1010,
+      "p95": 7,
+      "err_pct": 0.0
+    }
+  }
+}

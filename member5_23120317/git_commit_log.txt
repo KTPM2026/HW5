@@ -1,3 +1,52 @@
+commit b158619393dbeb5f78a79d613f0ce6633f94d173
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:06:53 2026 +0700
+
+    P5: AI Audit Report và AI Critique
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ docs/07_AI_Audit_Report.md | 49 ++++++++++++++++++++++++++++++++++++++++++++++
+ docs/08_AI_Critique.md     |  9 +++++++++
+ 2 files changed, 58 insertions(+)
+
+commit 3abfe124a9dab2e45003161841c255382d8ecf3e
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:06:53 2026 +0700
+
+    P5: Agent Skill perf-testing-workflow
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ skill/perf-testing-workflow/SKILL.md | 71 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 71 insertions(+)
+
+commit f17f70a4b514a8d1de1a3370f71764e35c06cd6b
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:06:52 2026 +0700
+
+    P5: Task 3 – mô hình Continuous Performance Testing, cổng hồi quy p95, CI mẫu
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ ci/baseline.json                                | 45 ++++++++++++++
+ ci/perf-regression.yml                          | 77 +++++++++++++++++++++++
+ docs/06_Task3_Continuous_Performance_Testing.md | 82 +++++++++++++++++++++++++
+ scripts/perf_gate.py                            | 76 +++++++++++++++++++++++
+ 4 files changed, 280 insertions(+)
+
+commit 2f99b205ad8f14020dd892c0d1f43dd5d5fad71a
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:02:48 2026 +0700
+
+    P5: ghi link Issues/PR, xuất git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ docs/04_Huong_dan_thuc_hien.md |   3 +-
+ git_commit_log.txt             | 843 +++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 845 insertions(+), 1 deletion(-)
+
 commit 6ce16a964ac66ae7459ed1d7202ae3155babdd93
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:01:56 2026 +0700
