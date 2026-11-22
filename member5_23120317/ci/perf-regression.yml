@@ -1,0 +1,77 @@
+# GitHub Actions – Continuous Performance Testing cho eshop-sut (Task 3, bản đề xuất)
+# Đặt tại .github/workflows/perf-regression.yml của repo SUT.
+name: perf-regression
+
+on:
+  pull_request:
+    paths: ["backend/**"]            # chỉ backend mới ảnh hưởng hiệu năng API
+  push:
+    branches: [main]
+    paths: ["backend/**"]
+  schedule:
+    - cron: "0 19 * * *"             # 02:00 giờ VN – full run hằng đêm
+  workflow_dispatch:
+
+concurrency:                          # chỉ 1 lần chạy/nhánh, huỷ lần cũ khi có commit mới
+  group: perf-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  decide:
+    runs-on: ubuntu-latest
+    outputs:
+      tier: ${{ steps.t.outputs.tier }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - id: t
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then echo "tier=full" >> $GITHUB_OUTPUT; exit 0; fi
+          BASE=${{ github.event.pull_request.base.sha || 'HEAD~1' }}
+          CHANGED=$(git diff --name-only $BASE HEAD -- backend/)
+          # thay đổi chạm truy vấn SQL, schema hoặc dependency -> chạy smoke perf; còn lại (comment, log) -> bỏ qua
+          if echo "$CHANGED" | grep -qE 'server.js|database.js|package(-lock)?.json'; then
+            if git diff $BASE HEAD -- backend/ | grep -qE '^[+-].*(db\.(run|get|all|prepare)|SELECT|INSERT|UPDATE|CREATE|app\.(get|post|put|delete))'; then
+              echo "tier=smoke" >> $GITHUB_OUTPUT; exit 0; fi
+          fi
+          echo "tier=skip" >> $GITHUB_OUTPUT
+
+  perf:
+    needs: decide
+    if: needs.decide.outputs.tier != 'skip'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - name: Cài JMeter
+        run: curl -sL https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-5.6.3.tgz | tar xz
+      - name: Khởi động SUT (DB tự reset khi start) + chuẩn bị dữ liệu cố định
+        run: |
+          cd backend && npm ci && (node server.js &) && sleep 3 && cd ..
+          node perf/scripts/prepare_data.js --users 500 --orders 3     # luôn 1.500 đơn -> so sánh công bằng
+      - name: Chạy JMeter
+        run: |
+          if [ "${{ needs.decide.outputs.tier }}" = "full" ]; then ARGS="-Jusers=50 -Jduration=360"; else ARGS="-Jusers=30 -Jduration=120 -Jrampup=20"; fi
+          cd perf/test-plans
+          ../../apache-jmeter-5.6.3/bin/jmeter -n -t *_Load_*.jmx $ARGS -l ../../run.jtl -e -o ../../html-report
+      - name: Cổng hồi quy p95 (chạy lại 1 lần nếu fail để loại nhiễu)
+        run: |
+          python3 perf/scripts/perf_gate.py check run.jtl -b perf/ci/baseline.json >> $GITHUB_STEP_SUMMARY || {
+            echo "Lần 1 fail – chạy xác nhận lần 2" >> $GITHUB_STEP_SUMMARY
+            cd perf/test-plans && ../../apache-jmeter-5.6.3/bin/jmeter -n -t *_Load_*.jmx -Jusers=30 -Jduration=120 -l ../../run2.jtl && cd ../..
+            python3 perf/scripts/perf_gate.py check run2.jtl -b perf/ci/baseline.json >> $GITHUB_STEP_SUMMARY
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: perf-${{ github.sha }}
+          path: |
+            run*.jtl
+            html-report
+      - name: Cập nhật baseline (chỉ nightly trên main, khi PASS)
+        if: success() && github.event_name == 'schedule'
+        run: python3 perf/scripts/perf_gate.py baseline run.jtl -o perf/ci/baseline.json   # commit bởi bot / lưu artifact

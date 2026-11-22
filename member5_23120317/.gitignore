@@ -1,0 +1,6 @@
+# .jtl > 50 MB: nén nộp Moodle (GitHub giới hạn 100 MB/file)
+results/23120317_Soak_20261119/*.jtl
+results/23120317_Stress_20261119_breakpoint/*.jtl
+results/**/jmeter.log
+*.mp4
+test-plans/report-view/

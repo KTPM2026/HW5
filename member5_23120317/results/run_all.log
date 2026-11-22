@@ -1,0 +1,143 @@
+== [STUDENTID_Load_20261119] reset lockout (FR-02) ==
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 1571
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider (file:/D:/Tools/apache-jmeter-5.6.3/lib/xstream-1.4.20.jar)
+WARNING: Please consider reporting this to the maintainers of class com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using D:/University/Testing/HW05/member5/test-plans/STUDENTID_Load_20261119.jmx
+Starting standalone test @ 2026 Nov 19 23:03:34 GMT+07:00 (1795104214044)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +    129 in 00:00:26 =    5.0/s Avg:     2 Min:     1 Max:    31 Err:     0 (0.00%) Active: 22 Started: 22 Finished: 0
+summary +    504 in 00:00:30 =   16.8/s Avg:     2 Min:     0 Max:     9 Err:     0 (0.00%) Active: 47 Started: 47 Finished: 0
+summary =    633 in 00:00:56 =   11.3/s Avg:     2 Min:     0 Max:    31 Err:     0 (0.00%)
+summary +    731 in 00:00:30 =   24.4/s Avg:     1 Min:     0 Max:     7 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   1364 in 00:01:26 =   15.9/s Avg:     2 Min:     0 Max:    31 Err:     0 (0.00%)
+summary +    750 in 00:00:30 =   25.0/s Avg:     2 Min:     0 Max:    38 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   2114 in 00:01:56 =   18.2/s Avg:     2 Min:     0 Max:    38 Err:     0 (0.00%)
+summary +    761 in 00:00:30 =   25.4/s Avg:     1 Min:     0 Max:    44 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   2875 in 00:02:26 =   19.7/s Avg:     2 Min:     0 Max:    44 Err:     0 (0.00%)
+summary +    748 in 00:00:30 =   25.0/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   3623 in 00:02:56 =   20.6/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    757 in 00:00:30 =   25.2/s Avg:     2 Min:     0 Max:    12 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   4380 in 00:03:26 =   21.3/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    738 in 00:00:30 =   24.6/s Avg:     2 Min:     0 Max:    19 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   5118 in 00:03:56 =   21.7/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    742 in 00:00:30 =   24.7/s Avg:     2 Min:     0 Max:    10 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   5860 in 00:04:26 =   22.0/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    754 in 00:00:30 =   25.2/s Avg:     2 Min:     0 Max:    42 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   6614 in 00:04:56 =   22.3/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    722 in 00:00:30 =   24.1/s Avg:     2 Min:     0 Max:    18 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   7336 in 00:05:26 =   22.5/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    746 in 00:00:30 =   24.8/s Avg:     2 Min:     0 Max:    15 Err:     0 (0.00%) Active: 50 Started: 50 Finished: 0
+summary =   8082 in 00:05:56 =   22.7/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+summary +    108 in 00:00:04 =   26.5/s Avg:     2 Min:     0 Max:    12 Err:     0 (0.00%) Active: 0 Started: 50 Finished: 50
+summary =   8190 in 00:06:00 =   22.7/s Avg:     2 Min:     0 Max:    49 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 23:09:34 GMT+07:00 (1795104574117)
+... end of run
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 2577
+== done: /d/University/Testing/HW05/member5/results/STUDENTID_Load_20261119 ==
+== [23120317_Stress_20261119] reset lockout (FR-02) ==
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 2577
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider (file:/D:/Tools/apache-jmeter-5.6.3/lib/xstream-1.4.20.jar)
+WARNING: Please consider reporting this to the maintainers of class com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using D:/University/Testing/HW05/member5/test-plans/23120317_Stress_20261119.jmx
+Starting standalone test @ 2026 Nov 19 23:09:38 GMT+07:00 (1795104578726)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +   1096 in 00:00:21 =   51.7/s Avg:     2 Min:     0 Max:    34 Err:     0 (0.00%) Active: 71 Started: 71 Finished: 0
+summary +   4382 in 00:00:30 =  146.1/s Avg:     1 Min:     0 Max:    48 Err:     0 (0.00%) Active: 100 Started: 100 Finished: 0
+summary =   5478 in 00:00:51 =  107.0/s Avg:     1 Min:     0 Max:    48 Err:     0 (0.00%)
+summary +   4566 in 00:00:30 =  152.2/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%) Active: 100 Started: 100 Finished: 0
+summary =  10044 in 00:01:21 =  123.7/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%)
+summary +   5745 in 00:00:30 =  191.5/s Avg:     1 Min:     0 Max:    23 Err:     0 (0.00%) Active: 171 Started: 171 Finished: 0
+summary =  15789 in 00:01:51 =  142.0/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%)
+summary +   8975 in 00:00:30 =  299.1/s Avg:     1 Min:     0 Max:    33 Err:     0 (0.00%) Active: 200 Started: 200 Finished: 0
+summary =  24764 in 00:02:21 =  175.4/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%)
+summary +   9191 in 00:00:30 =  306.4/s Avg:     1 Min:     0 Max:    42 Err:     0 (0.00%) Active: 200 Started: 200 Finished: 0
+summary =  33955 in 00:02:51 =  198.3/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%)
+summary +  10265 in 00:00:30 =  342.1/s Avg:     2 Min:     0 Max:    29 Err:     0 (0.00%) Active: 271 Started: 271 Finished: 0
+summary =  44220 in 00:03:21 =  219.8/s Avg:     1 Min:     0 Max:    61 Err:     0 (0.00%)
+summary +  13418 in 00:00:30 =  447.4/s Avg:     6 Min:     0 Max:    96 Err:     0 (0.00%) Active: 300 Started: 300 Finished: 0
+summary =  57638 in 00:03:51 =  249.3/s Avg:     2 Min:     0 Max:    96 Err:     0 (0.00%)
+summary +  13520 in 00:00:30 =  450.7/s Avg:    10 Min:     0 Max:   126 Err:     0 (0.00%) Active: 300 Started: 300 Finished: 0
+summary =  71158 in 00:04:21 =  272.4/s Avg:     4 Min:     0 Max:   126 Err:     0 (0.00%)
+summary +  14523 in 00:00:30 =  484.1/s Avg:    10 Min:     0 Max:    92 Err:     0 (0.00%) Active: 371 Started: 371 Finished: 0
+summary =  85681 in 00:04:51 =  294.2/s Avg:     5 Min:     0 Max:   126 Err:     0 (0.00%)
+summary +  17626 in 00:00:30 =  587.6/s Avg:    14 Min:     1 Max:   150 Err:     0 (0.00%) Active: 400 Started: 400 Finished: 0
+summary = 103307 in 00:05:21 =  321.6/s Avg:     7 Min:     0 Max:   150 Err:     0 (0.00%)
+summary +  18291 in 00:00:30 =  609.7/s Avg:     4 Min:     0 Max:    57 Err:     0 (0.00%) Active: 400 Started: 400 Finished: 0
+summary = 121598 in 00:05:51 =  346.2/s Avg:     6 Min:     0 Max:   150 Err:     0 (0.00%)
+summary +  19478 in 00:00:30 =  649.2/s Avg:     3 Min:     0 Max:    32 Err:     0 (0.00%) Active: 471 Started: 471 Finished: 0
+summary = 141076 in 00:06:21 =  370.1/s Avg:     6 Min:     0 Max:   150 Err:     0 (0.00%)
+summary +  22679 in 00:00:30 =  756.1/s Avg:     6 Min:     0 Max:   117 Err:     0 (0.00%) Active: 500 Started: 500 Finished: 0
+summary = 163755 in 00:06:51 =  398.2/s Avg:     6 Min:     0 Max:   150 Err:     0 (0.00%)
+summary +  22920 in 00:00:30 =  764.0/s Avg:     4 Min:     0 Max:    35 Err:     0 (0.00%) Active: 500 Started: 500 Finished: 0
+summary = 186675 in 00:07:21 =  423.1/s Avg:     6 Min:     0 Max:   150 Err:     0 (0.00%)
+summary +   6858 in 00:00:09 =  763.4/s Avg:     5 Min:     0 Max:    48 Err:     0 (0.00%) Active: 0 Started: 500 Finished: 500
+summary = 193533 in 00:07:30 =  429.9/s Avg:     5 Min:     0 Max:   150 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 23:17:08 GMT+07:00 (1795105028984)
+... end of run
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 26547
+== done: /d/University/Testing/HW05/member5/results/23120317_Stress_20261119 ==
+== [23120317_Spike_20261119] reset lockout (FR-02) ==
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 26547
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARN StatusConsoleListener The use of package scanning to locate plugins is deprecated and will be removed in a future release
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider (file:/D:/Tools/apache-jmeter-5.6.3/lib/xstream-1.4.20.jar)
+WARNING: Please consider reporting this to the maintainers of class com.thoughtworks.xstream.converters.reflection.SunUnsafeReflectionProvider
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Creating summariser <summary>
+Created the tree successfully using D:/University/Testing/HW05/member5/test-plans/23120317_Spike_20261119.jmx
+Starting standalone test @ 2026 Nov 19 23:17:15 GMT+07:00 (1795105035815)
+Waiting for possible Shutdown/StopTestNow/HeapDump/ThreadDump message on port 4445
+summary +    118 in 00:00:14 =    8.3/s Avg:     3 Min:     1 Max:    34 Err:     0 (0.00%) Active: 20 Started: 20 Finished: 0
+summary +    398 in 00:00:30 =   13.3/s Avg:     2 Min:     0 Max:    27 Err:     0 (0.00%) Active: 20 Started: 20 Finished: 0
+summary =    516 in 00:00:44 =   11.7/s Avg:     2 Min:     0 Max:    34 Err:     0 (0.00%)
+summary +    390 in 00:00:30 =   13.0/s Avg:     2 Min:     0 Max:    21 Err:     0 (0.00%) Active: 20 Started: 20 Finished: 0
+summary =    906 in 00:01:14 =   12.2/s Avg:     2 Min:     0 Max:    34 Err:     0 (0.00%)
+summary +    400 in 00:00:30 =   13.4/s Avg:     2 Min:     0 Max:     7 Err:     0 (0.00%) Active: 20 Started: 20 Finished: 0
+summary =   1306 in 00:01:44 =   12.5/s Avg:     2 Min:     0 Max:    34 Err:     0 (0.00%)
+summary +   2551 in 00:00:30 =   85.1/s Avg:     1 Min:     0 Max:    19 Err:     0 (0.00%) Active: 320 Started: 320 Finished: 0
+summary =   3857 in 00:02:14 =   28.8/s Avg:     2 Min:     0 Max:    34 Err:     0 (0.00%)
+summary +   6414 in 00:00:30 =  213.8/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%) Active: 320 Started: 320 Finished: 0
+summary =  10271 in 00:02:44 =   62.6/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+summary +   3604 in 00:00:30 =  120.1/s Avg:     2 Min:     0 Max:    14 Err:     0 (0.00%) Active: 20 Started: 320 Finished: 300
+summary =  13875 in 00:03:14 =   71.5/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+summary +    402 in 00:00:30 =   13.4/s Avg:     2 Min:     0 Max:    18 Err:     0 (0.00%) Active: 20 Started: 320 Finished: 300
+summary =  14277 in 00:03:44 =   63.7/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+summary +    401 in 00:00:30 =   13.3/s Avg:     2 Min:     0 Max:    16 Err:     0 (0.00%) Active: 20 Started: 320 Finished: 300
+summary =  14678 in 00:04:14 =   57.7/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+summary +    396 in 00:00:30 =   13.1/s Avg:     2 Min:     0 Max:     7 Err:     0 (0.00%) Active: 20 Started: 320 Finished: 300
+summary =  15074 in 00:04:44 =   53.0/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+summary +    211 in 00:00:16 =   13.6/s Avg:     2 Min:     0 Max:     7 Err:     0 (0.00%) Active: 0 Started: 320 Finished: 320
+summary =  15285 in 00:05:00 =   51.0/s Avg:     2 Min:     0 Max:    37 Err:     0 (0.00%)
+Tidying up ...    @ 2026 Nov 19 23:22:15 GMT+07:00 (1795105335788)
+... end of run
+Trước reset: 0 user có login_attempts>0 hoặc đang bị khóa
+Đã reset 502 user
+Số đơn hàng hiện có: 28275
+== done: /d/University/Testing/HW05/member5/results/23120317_Spike_20261119 ==
