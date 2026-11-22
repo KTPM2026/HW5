@@ -63,4 +63,5 @@ Gửi cho Claude các file `results/*/analysis.md` mới (hoặc tự chạy `py
 - [ ] 3 ảnh report view (Summary / Aggregate / View Results Tree)
 - [ ] `results/` có `.jtl` + `html-report/` mỗi kịch bản
 - [ ] `03_Results_Analysis.md` đã cập nhật và tự kiểm tra
-- [ ] AI Audit log, GitHub Issues, `git_commit_log.txt`
+- [x] GitHub Issues: https://github.com/KTPM2026/HW5/issues (#2–#7) · PR: https://github.com/KTPM2026/HW5/pull/1
+- [ ] AI Audit log, `git_commit_log.txt`
