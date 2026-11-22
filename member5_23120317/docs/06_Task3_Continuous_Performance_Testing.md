@@ -15,15 +15,18 @@ flowchart TD
     N[Lịch hằng đêm 02:00] --> F[Tier FULL: Load 50 VU 6 phút<br/>+ Stress/Spike mỗi tuần]
     D --> E[Khởi động SUT sạch:<br/>DB reset + prepare_data 500 user / 1.500 đơn]
     F --> E
-    E --> G[JMeter CLI -> .jtl + HTML report]
+    E --> G[JMeter CLI → .jtl + HTML report]
     G --> H[perf_gate.py: so p95 từng request với baseline]
-    H --> I{p95 > base × 1,2<br/>VÀ tăng > 5 ms<br/>hoặc lỗi +1 điểm %?}
+    H --> I{p95 #gt; base × 1,2<br/>VÀ tăng #gt; 5 ms<br/>hoặc lỗi +1 điểm %?}
     I -- Không --> P[PASS<br/>nightly trên main: cập nhật baseline]
     I -- Có --> R[Chạy xác nhận lần 2]
     R --> J{Vẫn vi phạm?}
     J -- Không --> W[PASS kèm cảnh báo nhiễu<br/>ghi log để theo dõi độ ổn định runner]
     J -- Có --> K[FAIL: chặn merge PR<br/>comment bảng p95, link HTML report, mở issue]
 ```
+
+> Bản ảnh của lưu đồ (dùng khi trình xem không render Mermaid): ![Lưu đồ CPT](img/task3_flowchart.png)
+
 
 ## 2. Thành phần
 

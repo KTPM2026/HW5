@@ -1,3 +1,35 @@
+commit ef476dcdbb446f3499e513b567a0f96e6cca2683
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:11:03 2026 +0700
+
+    P5: báo cáo chính (MD + PDF), PDF AI Critique/Audit, transcript phiên AI, tự đánh giá 90
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ README.md                                       |   18 +-
+ docs/00_Main_Report.md                          |  686 +++++++
+ docs/06_Task3_Continuous_Performance_Testing.md |    7 +-
+ docs/ai_session_transcript.txt                  | 2317 +++++++++++++++++++++++
+ docs/img/task3_flowchart.png                    |  Bin 0 -> 73567 bytes
+ git_commit_log.txt                              |   12 +
+ pdf/23120317_HW05_AI_Audit_Report.pdf           |  Bin 0 -> 138226 bytes
+ pdf/23120317_HW05_AI_Critique.pdf               |  Bin 0 -> 48344 bytes
+ pdf/23120317_HW05_Main_Report.pdf               |  Bin 0 -> 866336 bytes
+ scripts/build_pdf.py                            |   72 +
+ 10 files changed, 3103 insertions(+), 9 deletions(-)
+
+commit 94ffe625c6092f5ce12888fa8708dbc0840d7e26
+Author: hcmus-phat <23120317@student.hcmus.edu.vn>
+Date:   Sun Nov 22 16:06:53 2026 +0700
+
+    P5: cập nhật README và git commit log
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+ README.md          |  9 +++++++--
+ git_commit_log.txt | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 56 insertions(+), 2 deletions(-)
+
 commit b158619393dbeb5f78a79d613f0ce6633f94d173
 Author: hcmus-phat <23120317@student.hcmus.edu.vn>
 Date:   Sun Nov 22 16:06:53 2026 +0700

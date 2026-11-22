@@ -33,6 +33,8 @@
 | `skill/perf-testing-workflow/SKILL.md` | Agent Skill tái sử dụng quy trình cho nhóm endpoint khác |
 | `docs/07_AI_Audit_Report.md` | AI Audit Report |
 | `docs/08_AI_Critique.md` | AI Critique (200–300 từ) |
+| `docs/ai_session_transcript.txt` | Transcript đầy đủ phiên Claude Code (`/export`) |
+| `pdf/` | Bản PDF của báo cáo chính, AI Critique, AI Audit Report |
 | `test-plans/` | `23120317_{Load,Stress,Spike,Soak}_20261119.jmx` |
 | `data/` | `users.csv`, `products.csv` |
 | `results/<plan>/` | `.jtl`, `html-report/`, `node_resource.csv`, `analysis.md` |
@@ -43,12 +45,14 @@
 
 ## Self-assessment
 
+> Agent Skill: đã có `skill/perf-testing-workflow/SKILL.md` nhưng chưa có video demo dùng skill trên một nhóm endpoint hoàn chỉnh như đề yêu cầu → tự chấm 0.
+
 | No. | Criteria | Grade | Self-assessed |
 |---|---|---:|---:|
-| 1 | Task 1 – Load testing | 30 | |
-| 2 | Task 1 – Stress testing | 20 | |
-| 3 | Task 1 – Spike testing | 20 | |
-| 4 | Task 2 – AI analysis + misinterpretation hunt | 10 | |
-| 5 | Task 3 – Continuous Performance Testing proposal | 10 | |
-| 6 | Agent Skills | 10 | |
-| | **Total** | **100** | |
+| 1 | Task 1 – Load testing | 30 | 30 |
+| 2 | Task 1 – Stress testing | 20 | 20 |
+| 3 | Task 1 – Spike testing | 20 | 20 |
+| 4 | Task 2 – AI analysis + misinterpretation hunt | 10 | 10 |
+| 5 | Task 3 – Continuous Performance Testing proposal | 10 | 10 |
+| 6 | Agent Skills | 10 | 0 |
+| | **Total** | **100** | **90** |
